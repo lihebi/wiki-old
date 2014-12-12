@@ -6,7 +6,7 @@ layout: default
   <ul class="post-list">
     {% for post in site.wiki %}
       <li>
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <a href="{{ post.url | prepend: site.baseurl | remove: '/index.html' }}">{{ post.title }}</a>
       </li>
     {% endfor %}
   </ul>
