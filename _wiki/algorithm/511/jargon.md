@@ -1,3 +1,6 @@
+---
+title: jargon
+---
 # Jargons in algorithm
 
 * when $n$ is sufficiently large

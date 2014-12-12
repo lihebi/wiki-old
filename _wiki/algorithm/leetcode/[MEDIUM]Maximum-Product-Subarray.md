@@ -1,3 +1,6 @@
+---
+title: maximum product subarray
+---
 # Maximum Product Subarray
 
 [Maximum Product Subarray]

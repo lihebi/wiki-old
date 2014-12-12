@@ -1,3 +1,6 @@
+---
+title: CORS
+---
 # CORS
 
 Cross Origin Resource Sharing
@@ -125,5 +128,3 @@ function callOtherDomain() {
 ```
 Vary: Accept-Encoding, Origin
 ```
-
-

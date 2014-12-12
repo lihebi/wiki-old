@@ -1,3 +1,6 @@
+---
+title: string
+---
 # String in Javascript
 
 ## Type

@@ -1,12 +1,19 @@
-# DOM
+---
+title: DOM
+---
 
-## window
+DOM
+======
+
+window
+----------
 
 * `window.innerHeight`: height of the content area of the browser, 自动去掉inspector
 * `window.innerWidth`
 * `window.location`: object used to get/set location or currentURL
 
-## document
+document
+----------
 
 `window.document`
 

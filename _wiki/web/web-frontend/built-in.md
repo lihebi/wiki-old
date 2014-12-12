@@ -1,3 +1,6 @@
+---
+title: built-in
+---
 # Built in functions
 
 ## JSON

@@ -1,3 +1,6 @@
+---
+title: valid palindrome
+---
 # Valid Palindrome
 
 

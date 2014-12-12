@@ -1,3 +1,6 @@
+---
+title: np problems
+---
 NP Problems
 ==============
 

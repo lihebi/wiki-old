@@ -1,3 +1,6 @@
+---
+title: rotated sorted array ii
+---
 # Find Minimum in Rotated Sorted Array II
 
 [Find Minimum in Rotated Sorted Array II]

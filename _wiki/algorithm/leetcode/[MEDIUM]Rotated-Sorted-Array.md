@@ -1,3 +1,6 @@
+---
+title: rotated sorted array
+---
 # Find Minimum in Rotated Sorted Array
 
 [Find Minimum in Rotated Sorted Array](https://oj.leetcode.com/problems/find-minimum-in-rotated-sorted-array/)

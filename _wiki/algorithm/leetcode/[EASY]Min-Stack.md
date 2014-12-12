@@ -1,3 +1,6 @@
+---
+title: Min Stack
+---
 # Min Stack
 
 好久不写c程序了，语法忘了一半。记录一下basic syntax吧。

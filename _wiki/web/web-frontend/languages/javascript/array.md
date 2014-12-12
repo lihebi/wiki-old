@@ -1,3 +1,6 @@
+---
+title: array
+---
 # Array in Javascript
 
 ## Mutator Methods

@@ -1,3 +1,6 @@
+---
+title: function
+---
 ## function in Javascript
 
 ## 函数定义

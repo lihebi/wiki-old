@@ -1,3 +1,6 @@
+---
+title: javascript
+---
 # Javascript
 
 ## Small Tips
