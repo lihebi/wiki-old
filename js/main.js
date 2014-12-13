@@ -13,6 +13,7 @@ $(document).ready(function() {
   $('#cat cat').each(function() {
     $(this).append('<label>'+$(this).attr('id').substr(4)+'</label>')
   })
+  renderKatex();
 })
 
 function add(ele, href, title, currentHref) {
@@ -26,4 +27,14 @@ function add(ele, href, title, currentHref) {
     ele.append($('<cat id="'+id+'"></cat>'));
   }
   add(ele.find('cat#'+id), href, title, currentHref.substr(currentHref.indexOf('/')+1));
+}
+
+function renderKatex() {
+  $('code').each(function() {
+    var re=/^\$([^\$]+)\$$/
+    var result = re.exec($(this).text());
+    if (result.length>0) {
+      console.log(result[1]);
+    }
+  })
 }
