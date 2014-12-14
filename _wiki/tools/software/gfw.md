@@ -1,4 +1,6 @@
-
+---
+title: gfw
+---
 
 ## ssh for forward used by safe browser
 

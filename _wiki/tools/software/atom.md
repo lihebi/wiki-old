@@ -1,3 +1,7 @@
+---
+title: atom
+---
+
 # Atom
 
 ## configure

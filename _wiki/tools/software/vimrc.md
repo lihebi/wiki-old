@@ -1,3 +1,7 @@
+---
+title: vimrc
+---
+
 # vim configure file
 
 ## Install script including vundle

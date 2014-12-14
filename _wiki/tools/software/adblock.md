@@ -1,3 +1,7 @@
+---
+title: adblock
+---
+
 # adblock
 ## 基础过滤器
 

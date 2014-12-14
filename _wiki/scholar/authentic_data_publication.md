@@ -1,3 +1,7 @@
+---
+title: authentic data publication
+---
+
 # Authentic Data Publication
 
 * `title`: Authentic Data Publication over the Internet

@@ -1,3 +1,7 @@
+---
+title: shell script old
+---
+
 #basic syntax
 ```sh
 a=5

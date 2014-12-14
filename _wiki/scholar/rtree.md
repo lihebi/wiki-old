@@ -1,3 +1,7 @@
+---
+title: R tree
+---
+
 # R-Trees
 
 * `title`: R-Tree: A Dynamic Index Structure For Spatial Searching

@@ -1,23 +1,27 @@
+---
+title: debian
+---
+
 # GNU/Debian Installation
 
-# Get ISO
+## Get ISO
 
 Get ISO for CD.
 
-# Burn on USB
+## Burn on USB
 
 ```
 cp debian.iso /dev/sdb
 sync
 ```
 
-# Install
+## Install
 
 Follow Instructions.
 
-# After Installation config
+## After Installation config
 
-## sources.list
+### sources.list
 
 Search for a online generator for sources.list, and then
 
@@ -25,7 +29,7 @@ Search for a online generator for sources.list, and then
 apt-get update
 ```
 
-## wifi
+### wifi
 
 ```
 apt-get install wireless-tools
@@ -56,7 +60,7 @@ Then reload module:
 modprobe -r iwlwifi ; modprobe iwlwifi
 ```
 
-## sudo
+### sudo
 
 ```
 apt-get install sudo
@@ -70,7 +74,7 @@ Add to `/etc/sudoers` by `visudo`:
 hebi ALL=(ALL:ALL) ALL
 ```
 
-## Awesome
+### Awesome
 
 ```
 apt-get install awesome
@@ -85,7 +89,7 @@ Make it default, in `/etc/lightdm/lihgtdm.conf`:
 user-session=awesome
 ```
 
-## Use Text Terminal!
+### Use Text Terminal!
 
 Default runlevel is 2, in `/etc/inittab`:
 
@@ -102,7 +106,7 @@ update-rc.d lightdm defaults
 
 It will be renamed automatically to K01lightdm
 
-## xmodmap
+### xmodmap
 
 in `~/.xinitrc`:
 
@@ -114,7 +118,7 @@ xmodmap -e "clear Lock"
 xmodmap -e "add Control = Control_L"
 ```
 
-## default browser
+### default browser
 
 ```
 update-alternatives --config gnome-www-browser # maybe x-www-browser

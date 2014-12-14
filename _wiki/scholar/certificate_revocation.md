@@ -1,3 +1,7 @@
+---
+title: certificate revocation
+---
+
 # Certificate Revocation
 
 * `title`: certificate revocation and certificate update
@@ -26,7 +30,7 @@ Create and maintain efficient `authenticated data structures` holding info about
 
 ## concepts
 
-* `a certificate`: message signed by a 
+* `a certificate`: message signed by a
 publicly trusted authority(也叫`certification authority`,`CA`,其public key通过其他途径已经获得。)
 ,which include a public key and expireation date.
 负责给别人分发public key.

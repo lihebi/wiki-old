@@ -1,3 +1,7 @@
+---
+title: latex-symbol
+---
+
 # Latex symbols
 
 ## 希腊字母

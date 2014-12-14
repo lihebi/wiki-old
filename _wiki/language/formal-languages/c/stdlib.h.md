@@ -1,3 +1,6 @@
+---
+title: stdlib
+---
 
 ## stdlib.h
 

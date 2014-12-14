@@ -1,3 +1,6 @@
+---
+title: apple script
+---
 
 ## Basics
 

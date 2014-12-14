@@ -1,3 +1,7 @@
+---
+title: software
+---
+
 # Software in Mac
 
 # Homebrew

@@ -1,3 +1,7 @@
+---
+title: ubuntu
+---
+
 Ubuntu
 =============
 
@@ -40,4 +44,3 @@ sudo update-grub
 ```
 
 No need to delete lightdm entry in `/etc/init.d`, lightdm will check if it is in text mode.
-

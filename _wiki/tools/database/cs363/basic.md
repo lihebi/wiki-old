@@ -1,3 +1,7 @@
+---
+title: basic
+---
+
 # Database
 
 ## concepts

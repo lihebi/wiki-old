@@ -1,3 +1,7 @@
+---
+title: library
+---
+
 # Library
 
 Static Library .a

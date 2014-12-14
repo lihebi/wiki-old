@@ -1,3 +1,7 @@
+---
+title: latex
+---
+
 # latex
 
 ## Components

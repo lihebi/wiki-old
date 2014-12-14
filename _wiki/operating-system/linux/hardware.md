@@ -1,3 +1,7 @@
+---
+title: hardware operation
+---
+
 # Linux hardware operations
 
 ```

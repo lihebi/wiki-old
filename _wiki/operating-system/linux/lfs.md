@@ -1,3 +1,7 @@
+---
+title: linux from scratch
+---
+
 # Linux From Scratch In Action
 
 # Partition

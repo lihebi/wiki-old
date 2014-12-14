@@ -1,3 +1,7 @@
+---
+title: pptp
+---
+
 # 服务器
 
 ## Install pptpd

@@ -1,3 +1,7 @@
+---
+title: linux built-in software
+---
+
 # Out-of-box Built-in Software
 
 # groff

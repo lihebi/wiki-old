@@ -1,3 +1,7 @@
+---
+title: archlinux
+---
+
 # Arch Linux Installation Steps
 
 ## Partition

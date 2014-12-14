@@ -1,3 +1,7 @@
+---
+title: xquery
+---
+
 # XQuery
 
 FLWOR: for let where orderby return

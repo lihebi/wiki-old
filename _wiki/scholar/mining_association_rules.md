@@ -1,3 +1,7 @@
+---
+title: mining association rules
+---
+
 # Mining Association Rules
 
 * `title`: Mining association rules between sets of items in large databases

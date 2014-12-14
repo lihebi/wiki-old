@@ -1,3 +1,7 @@
+---
+title: concept
+---
+
 # Basic and Important Linux Concepts
 
 # man pages

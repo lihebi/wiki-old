@@ -1,3 +1,7 @@
+---
+title: trouble shooting
+---
+
 # trouble in linux
 
 ## glibc 2.14+(2.19) in debian

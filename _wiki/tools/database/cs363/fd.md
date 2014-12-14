@@ -1,3 +1,7 @@
+---
+title: cs363 functional dependency
+---
+
 Functional Dependency
 =====================
 

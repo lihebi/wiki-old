@@ -1,3 +1,7 @@
+---
+title: base64
+---
+
 # Base64
 
 ## Concept

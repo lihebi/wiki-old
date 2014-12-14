@@ -1,3 +1,7 @@
+---
+title: photoshop
+---
+
 # photoshop
 
 ## shortcuts

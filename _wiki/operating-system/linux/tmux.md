@@ -1,3 +1,7 @@
+---
+title: tmux
+---
+
 # Tmux
 
 # Start & Stop

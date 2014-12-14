@@ -1,3 +1,7 @@
+---
+title: shell script new
+---
+
 # Shell Script
 
 用if比较两个字符串是否相等。

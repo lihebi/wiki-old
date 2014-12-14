@@ -1,3 +1,7 @@
+---
+title: admin
+---
+
 # Admin in Linux
 
 # User Manage

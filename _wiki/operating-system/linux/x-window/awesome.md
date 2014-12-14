@@ -1,3 +1,7 @@
+---
+awesome
+---
+
 # Awesome Window Manager
 
 # Shortcuts

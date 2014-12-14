@@ -1,3 +1,7 @@
+---
+title: redis
+---
+
 # Redis
 
 # Install

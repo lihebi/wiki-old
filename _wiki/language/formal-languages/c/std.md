@@ -1,3 +1,6 @@
+---
+title: std
+---
 
 ## strings.h
 
