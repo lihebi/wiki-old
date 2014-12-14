@@ -14,6 +14,7 @@ $(document).ready(function() {
     $(this).append('<label>'+$(this).attr('id').substr(4)+'</label>')
   })
   renderKatex();
+  adjustEdit();
 })
 
 function add(ele, href, title, currentHref) {
@@ -46,4 +47,11 @@ function renderKatex() {
       }
     }
   })
+}
+
+function adjustEdit() {
+  var edit = $('header .edit-btn');
+  var editStr = edit.attr('href');
+  editStr = 'https://github.com/lihebi/wiki/edit/gh-pages/'+editStr.substr(editStr.indexOf('_wiki'));
+  edit.attr('href', editStr);
 }
