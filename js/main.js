@@ -32,10 +32,18 @@ function add(ele, href, title, currentHref) {
 function renderKatex() {
   $('code').each(function() {
     var re=/^\$([^\$]+)\$$/
-    var result = re.exec($(this).text());
-    if (result.length>0) {
-      katex.render(result[1], $(this).parent().get(0));
-      $(this).remove();
+    var katexSrc = $(this).text();
+    var result = re.exec(katexSrc);
+    if (result != null && result.length>0) {
+      try {
+        $(this).after('<span></span>'); // add <span> element for katex to render in
+        katex.render(result[1], $(this).next().get(0));
+        // append katex source string for future reference
+        $(this).next().append('<span class="katex-src">'+katexSrc+'</span>');
+        $(this).remove();
+      } catch(e) {
+        console.log(e);
+      }
     }
   })
 }
