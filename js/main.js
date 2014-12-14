@@ -34,7 +34,8 @@ function renderKatex() {
     var re=/^\$([^\$]+)\$$/
     var result = re.exec($(this).text());
     if (result.length>0) {
-      console.log(result[1]);
+      katex.render(result[1], $(this).parent().get(0));
+      $(this).remove();
     }
   })
 }
