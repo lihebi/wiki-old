@@ -1,5 +1,5 @@
 ---
-awesome
+title: awesome
 ---
 
 # Awesome Window Manager

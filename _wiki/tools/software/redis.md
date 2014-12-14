@@ -28,14 +28,14 @@ redis-cli
 
 set and get
 
-```redis
+```
 set server:name "fido"
 get server:name # => "fido"
 ```
 
 del and incr
 
-```redis
+```
 set connections 10
 incr connections # => 11
 incr connections # => 12
@@ -47,14 +47,14 @@ get connections # => 1
 
 expire and ttl
 
-```redis
+```
 ttl resource:lock "Demo"
 expire resource:lock 120
 ```
 
 ttl check the current time left
 
-```redis
+```
 # before set expire
 ttl resource:lock # => -1, means it will never expire
 # after
@@ -69,7 +69,7 @@ every time you set a key, its ttl will be reset.
 
 rpush, lpush, llen, lrange, lpop, rpop
 
-```redis
+```
 # push
 rpush friends 'Alice'
 rpush friends 'Bob'
@@ -79,12 +79,12 @@ lpush friends 'Cindy'
 
 get a range from list
 
-```redis
+```
 lrange friends 0 -1 # get all
 lrange friends 0 1 # get first and second
 ```
 
-```redis
+```
 llen friends # => 3
 lpop friends # pop and return
 rpop friends
@@ -94,7 +94,7 @@ rpop friends
 
 sadd, srem, sismember, smembers, sunion
 
-```redis
+```
 sadd myset 'a'
 sadd myset 'b'
 sadd myset 'c'
@@ -113,7 +113,7 @@ sunion myset set2 # => 'a' 'b' 'd'
 
 ## Sorted Set
 
-```redis
+```
 zadd hackers 12 'alice'
 zadd hackers 31 'bob'
 zadd hackers 11 'cindy'
@@ -125,7 +125,7 @@ They will be sorted by 12, 31, 11
 
 ## Hash
 
-```redis
+```
 hset user:1000 name "John"
 hset user:1000 email "john@gmail.com"
 hset user:1000 password "sfin"
@@ -136,13 +136,13 @@ hget user:1000 name
 
 set in one line
 
-```redis
+```
 hmset user:1000 name "John" password 'djsf' email 'john@gmail.com'
 ```
 
 incr
 
-```redis
+```
 hset user:1000 visits 10
 hincrby user:1000 visits 1
 hincrby user:1000 visits 10
