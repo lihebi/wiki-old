@@ -1,4 +1,11 @@
 $(document).ready(function() {
+  hljs.initHighlightingOnLoad();
+  renderPostList();
+  renderKatex();
+  adjustEdit();
+})
+
+function renderPostList() {
   d=[];
   $('.post-list li a').each(function(index) {
     d.push({
@@ -13,9 +20,7 @@ $(document).ready(function() {
   $('#cat cat').each(function() {
     $(this).append('<label>'+$(this).attr('id').substr(4)+'</label>')
   })
-  renderKatex();
-  adjustEdit();
-})
+}
 
 function add(ele, href, title, currentHref) {
   if (currentHref.indexOf('/')<0) {
