@@ -3,6 +3,9 @@ $(document).ready(function() {
   renderPostList();
   renderKatex();
   adjustEdit();
+  $('#toc').toc({
+    'selectors': 'h2,h3'
+  });
 })
 
 function renderPostList() {
