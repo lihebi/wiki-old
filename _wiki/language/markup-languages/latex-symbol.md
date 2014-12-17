@@ -17,6 +17,11 @@ title: latex-symbol
 * `\sigma`: `$\sigma$`
 * `\epsilon`: `$\epsilon$`
 
+## white space
+
+* `\quad`: `$\quad$`1em
+* `\qquad`: `$\qquad$`2em
+
 ## 集合
 
 * `\cup`: `$\cup$`
@@ -47,6 +52,10 @@ title: latex-symbol
 
 * `\infty`: `$\infty$`
 * `\forall`: `$\forall$`
+* `\lfloor`: `$\lfloor$`
+* `\rfloor`
+* `\lceil`: `$\lceil$`
+* `\rceil`
 
 ## Math
 

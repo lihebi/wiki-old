@@ -55,7 +55,17 @@ function renderKatex() {
         console.log(e);
       }
     }
-  })
+  });
+  $('.language-latex').each(function() {
+    var src = $(this).text();
+    var list = src.trim().split('\n');
+    var container = $(this).parent().parent().after('<p class="katex-pre"></p>').next();
+    $(this).parent().parent().remove();
+    for (var i=0;i<list.length;i++) {
+      console.log('rendering '+list[i]);
+      katex.render(list[i], container.append('<p></p>').find('p:last-child').get(0));
+    }
+  });
 }
 
 function adjustEdit() {

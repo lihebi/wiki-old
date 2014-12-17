@@ -109,3 +109,13 @@ body {
 h2 {
   border-bottom: 1px solid gray;
 }
+h3::before {
+  content: '>';
+}
+h4::before {
+  content: '>>';
+}
+
+.katex-pre {
+  padding-left: 20%;
+}

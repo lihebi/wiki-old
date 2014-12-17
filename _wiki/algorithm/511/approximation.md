@@ -111,23 +111,14 @@ k之后的就和S无关了。Ｓ中在`$S_i$`时被新cover的有`$u_i-u_{i-1}$`
 
 `$S_i$`是增加新cover最多的，所以`$|S_i-(S_1 \vee S_2 \ldots \vee S_{i-1})| \ge |S-(S_1 \vee S_2 \ldots \vee S_{i-1})| = u_{i-1}$`
 
-`$
+```latex
 \sum_{x \in S} c_x \le \sum_{i=1}^k (u_{i-1}-u_i) \frac{1}{u_{i-1}}
 = \sum_1^k \sum_{j=u_i+1}^{u_{i-1}} \frac{1}{u_{i-1}}
-$`
-
-`$
 \le \sum_1^k \sum_{j=u_i+1}^{u_{i-1}} \frac{1}{j} (because u_{i-1}>j)
-$`
-
-`$
 = \sum_1^k(\sum_{j=1}^{u_{i-1}} \frac{1}{j} - \sum_{j=1}^{u_i} \frac{1}{j})
 = \sum_1^k (H(u_{i-1})-H(u_i))
-$`
-
-`$
 = H(u_0)-H(u_k) = H(u_0)-H(0)=H(u_0)=H(|S|)
-$`
+```
 
 ### 引理
 我们注意到，`$\sum_1^n \frac{1}{i} \le ln(n) +1$`，有`$\rho(n) = (ln{|X|}+1)$`
@@ -162,23 +153,21 @@ Linear Programming for weighted vertex cover
 
 解：用w(v)代表v的权值，x(v)=0: 不在C中 =1: 在C中。其中C为vertex cover
 
-minimize `$\sum_{v\in V} w(v)x(v)$`
-
+```latex
+minimize \quad \sum_{v\in V} w(v)x(v)
 subject to
-
-`$x(u) + x(v) \ge 1$`
-
-`$x(v) \in {0,1}$`
+\qquad x(u) + x(v) \ge 1
+\qquad x(v) \in {0,1}
+```
 
 把它化为连续问题
 
-minimize `$\sum_{v\in V} w(v)x(v)$`
-
+```latex
+minimize \quad \sum_{v\in V} w(v)x(v)
 subject to
-
-`$x(u) + x(v) \ge 1$`
-
-`$0 \le x(v) \le 1$`
+\qquad x(u) + x(v) \ge 1
+\qquad 0 \le x(v) \le 1
+```
 
 (1)的解都满足(2)，所以(2)的解是(1)的lower bound.
 可以在P内得到(2)的解。
@@ -265,6 +254,8 @@ Denote:
 
 证明：
 
+#### 1
+
 显然`$z^* < y^*$`.现证明`$\frac{y^*}{z^*} \le 1+\epsilon$`.
 
 我们之后证明，对任意`$y \in P_i$`且`$y \le t$`,存在`$z \in L_i$` that
@@ -280,7 +271,26 @@ Denote:
 已经有`$y^*/z^* \le (1+\frac{\epsilon}{2n})^n$`
 现证明`$\frac{d}{dn} (1+\epsilon/2n)^n >0$`,即单增。
 
+```latex
+f(n)=(1+\frac{a}{n})^n
+ln(f(n)) = n ln(1+\frac{a}{n})
+\frac{f'(n)}{f(n)} = ln(1+\frac{a}{n}) - \frac{a}{n+a}
+```
+只需证明`$ln(1+a/n) - \frac{a}{n+a} >0$`
 
+```latex
+ln(1+\frac{a}{n}) = ln(\frac{n+a}{n}) = ln(x) |_n^{n+a} = \int_n^{n+a} \frac{1}{x}dx
+```
+由图得`$\int_n^{n+a} \frac{1}{x} dx > \frac{a}{n+a}$`
+
+有结论`$lim_{n->\infty} (1+\frac{\epsilon}{2n})^n = e^{\frac{\epsilon}{2}} \quad (3.14)$`
+所以
+
+```latex
+(1+\frac{\epsilon}{2n})^n \le e^{\frac{\epsilon}{2}}
+\le 1+\frac{\epsilon}{2} + (\frac{\epsilon}{2})^2 \quad (3.13)
+\le 1+\epsilon
+```
 
 #### 证明(1)
 
@@ -309,8 +319,16 @@ trim之后，也必然有一个`$z \in L_i$`使
 那么我们有`$y=y'+x_i \ge z'+x_i \ge z$`
 所以
 
-`$
-\frac{y}{(1+\delta)^i} = \frac{y'+x_i}{(1+\delta)^i}
-\le \frac{z'}{1+\delta} + \frac{x_i}{(1+\delta)^i}
-\le \frac{z'}{1+\delta} + \frac{x_i}{1+\delta} \le z
-$`
+```latex
+\frac{y}{(1+\delta)^i} = \frac{y'+x_i}{(1+\delta)^i} \le \frac{z'}{1+\delta} + \frac{x_i}{(1+\delta)^i} \le \frac{z'}{1+\delta} + \frac{x_i}{1+\delta} \le z
+```
+
+#### 2
+因为trim的原因，那么在Li中两个数之间要大于`$1+\frac{\epsilon}{2n}$`倍。
+所以Li中共有`$\lfloor log_{1+\frac{\epsilon}{2n}} t \rfloor+2$`个数（加0和1）。
+
+```latex
+log_{1+\frac{\epsilon}{2n}} t +2 = \frac{ln(t)}{ln(1+\frac{\epsilon}{2n})} +2
+\le \frac{2n(1+\frac{\epsilon}{2n})ln(t)}{\epsilon} +2
+\le \frac{3nln(t)}{\epsilon}+2
+```
