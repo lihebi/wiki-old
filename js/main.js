@@ -4,7 +4,8 @@ $(document).ready(function() {
   renderKatex();
   adjustEdit();
   $('#toc').toc({
-    'selectors': 'h2,h3'
+    'selectors': 'h2,h3',
+    'container': '.post-content'
   });
 })
 
