@@ -185,13 +185,57 @@ basic solution: 右侧nonbasic变量全为0.
 很简单，用`$x_l$`的表达式求出`$x_e$`，然后代入所有其他constraints以及z.
 
 ### PIVOT and SIMPLEX procedure
+PIVOT(N,B,A,b,c,v,l,e)
+
+```
+// 计算leaving这一行的新系数
+b'[e] = b[l]/a[l][e]
+for j in N-{e}
+  a'[e][j] = a[l][j]/a[l][e]
+a'[e][l] = 1/a[l][e]
+// 计算其余系数
+for i in B-{l}
+  b'[i] = b[i]-a[i][e]b'[e]
+  for j in N-{e}
+    a'[i][j] = a[i][j] - a[i][e]a'[e][j]
+  a'[i][l] = -a[i][e]a'[e][l]
+// 计算objectuive function
+v' = v+c[e]b'[e]
+for j in N-{e}
+  c'[j] = c[j]-c[e]a'[e][j]
+c'[l] = -c[e]a'[e][l]
+// 计算新的N,B
+...
+return (N',B',A',b',c',v');
+```
+
+SIMPLEX(A,b,c)
+
+```c
+(N,B,A,b,c,v) = INITIALIZE-SIMPLEX(A,b,c)
+for each c[j]>0
+  for i in B
+    if a[i][e]>0
+      tmp.push(b[i]/a[i][e])
+    if (tmp.length ==0) return "unbounded"
+    l = indexOf(min(tmp))
+    (N,B,A,b,c,v) = PIVOT(N,B,A,b,c,v,l,e)
+for i = 1 to n
+  if i in B
+    x[i] = b[i]
+  else
+    x[i] = 0
+return x // final answer
+```
+
+
 一些小定理：
 
-lemma 29.2: 如果INITIALIZE-SIMPLEX返回的slack form的basic solution可行，那么，
+**lemma 29.2**: 如果INITIALIZE-SIMPLEX返回的slack form的basic solution可行，那么，
 如果SIMPLEX最终返回了一个solution，那么这个solution可行；
 如果SIMPLEX返回unbound，那原问题确实是unbound的。
 
-证明可行：对每一次适代，我们有
+**证明可行**：对每一次适代，我们有
 
 ```latex
 \hat{b_e} = \frac{b_l}{a_{ie}}
@@ -204,22 +248,22 @@ lemma 29.2: 如果INITIALIZE-SIMPLEX返回的slack form的basic solution可行�
 显然`$b_l \ge 0,a_{le}>0$` => `$\hat{b_e} = \frac{b_l}{a_{le}} \ge 0$`
 还有`$\hat{b_i} = b_i - a_{ie}\frac{b_e}{a_{le}} \ge b_i - a_{ie}\frac{b_i}{a_{ie}}=0$`
 
-证明unbound见之前的分析。
+**证明unbound**:见之前的分析。
 
 -----
 
 不terminate的唯一情况是出现cycling: 在SIMPLEX的各个iteration中，存在两个完全相同的slack form.
 
-定理：若对任意`$x_j$`有`$Ax=r+BX$`，有
+**定理**：若对任意`$x_j$`有`$Ax=r+BX$`，有
 A=B, r=0
 
-证明： 令x=0 => r=0.令x_i=1=> a_i=b_i
+**证明**： 令x=0 => r=0.令x_i=1=> a_i=b_i
 
-引理：对于一个linear program (A,b,c) as standard form, 其slack form被Ｂ唯一确定。
+**引理**：对于一个linear program (A,b,c) as standard form, 其slack form被Ｂ唯一确定。
 
 SIMPLEX如果在`$C_{n+m}^m$`内还不返回，那么它就cycling了。
 
-证明：|B|=m,|N|=n，那么，共有`$C_{n+m}^m$`种slack form.若还不返回，那么就要重复了。
+**证明**：|B|=m,|N|=n，那么，共有`$C_{n+m}^m$`种slack form.若还不返回，那么就要重复了。
 
 cycling是会出现的，以下两种方法可以避免：在选择`$x_e,x_l$`时：
 
@@ -248,10 +292,10 @@ s.t.
 \qquad y \ge 0
 ```
 
-weak lp duality:
+**weak lp duality**:
 对任意`$\overline{x}$`为primal的可行解，`$\overline{y}$`为dual的可行解。有`$c^T\overline{x} \le b^T\overline{y}$`
 
-证明：
+**证明**：
 
 ```latex
 c^T\overline{x} = \sum c_j\overline{x_j}
@@ -260,22 +304,127 @@ c^T\overline{x} = \sum c_j\overline{x_j}
 \le \sum_i b_i\overline{y_i}
 ```
 
-引理：若`$c^T\overline{x}=b^T\overline{y}$`,则`$\overline{x},\overline{y}$`分别是两个问题的最优解。
+**引理**：若`$c^T\overline{x}=b^T\overline{y}$`,则`$\overline{x},\overline{y}$`分别是两个问题的最优解。
 
 **定理: LP duality**: SIMPLEX return a `$\overline{x}$`。用N,B表示final slack form的N and B.
 `$c'$`表示final的系数，\overline{y}的定义：
 
 ```latex
-\overline{y_i} = -c_{n+i}' if n+i \in N
-\qquad 0 otherwise
+\overline{y_i}=-c_{n+i} \quad if n+i \in N
+\qquad 0 \quad otherwise
 ```
 
 其实等价于`$\overline{y_i}=-c_{n+i}'$`，因为若`$n+i \in B$`，则`$c_{n+i}'=0$`。
-也就是`$\overline}{y}=-c_B'$`。这里B是原始的Ｂ。y共m个。
+也就是`$\overline{y}=-c_B'$`。这里B是原始的Ｂ。y共m个。
 
-那么有：`$\overline{x},\overline{y}$`分别是primal和dual的optimal solution,而且有`$c^T\overline{x} = b^T\overline{y}$`
+那么有：`$\overline{x},\overline{y}$`分别是primal和dual的optimal solution,
+而且有`$c^T\overline{x} = b^T\overline{y}$`
 
-证明：只需证明`$c^T\overline{x} = b^T\overline{y}$`
+**证明**：只需证明`$c^T\overline{x} = b^T\overline{y}$`
 
 由于`$\overline{x}$`是SIMPLEX返回的，最后的slack form是
-`$z=v'+c'^Tx$`
+`$z=v'+{c'}^Tx$`
+这里`$c'\le 0$`
+
+整理一下我们手头上的条件：（之后的Ｎ和Ｂ是primal原始问题的Ｎ和Ｂ，而不是final的。
+
+```latex
+A\overline{x_N}=b
+\overline{x_B} = b-A\overline{x_N}
+\overline{y} = -{c_B}' \quad (B defined in final form)
+{c^T}'\overline{x}=0
+c^T\overline{x}=z=v'+{c^T}'\overline{x}=v'
+```
+
+要证明`$c^T\overline{x}=b^T\overline{y}$`
+
+```latex
+c^T\overline{x_N} = c^T\overline{x} = v'+{c'}^T\overline{x}
+= v' + {c_N'}^T\overline{x_N} + {c_B'}^T\overline{x_B}
+= v' + {c_N'}^T\overline{x_N} - \overline{y}^T\overline{x_B}
+= v' + {c_N'}^T\overline{x_N} - \overline{y}^T(b-A\overline{x_N})
+= v' - b^Ty_B + ({c_N'}^T + \overline{y}^TA)\overline{x_N}
+```
+
+所以
+
+```latex
+v' = b^T\overline{y}
+{c_N'}^T+\overline{y}^TA = c^T
+```
+
+这就证明了`$c^T\overline{x} = b^T\overline{y}$`
+
+还需证明此解可行。也就是`$A^T\overline{y} \ge c, \overline{y}\ge 0$`
+由所得的第二式可知，两边求下T:`$A^T\overline{y}+c_N'=c$`
+我们知道`$c_N'<0$`(最开始讲过).所以`$A^T\overline{y}>c$`
+由\overline{y}的定义式`$\overline{y}=-c_B'$`，且`$c_B'<0$`,有`$\overline{y}\ge 0$`
+
+初值可行性
+---------------
+
+设primal是
+
+```latex
+max \quad c^Tx
+s.t.
+\qquad Ax\le b
+\qquad x\ge 0
+```
+
+auxiliary LP(`$L_{aux}$`):
+
+```latex
+max \quad -x_0
+s.t.
+\qquad Ax-x_0 \le b
+\qquad x\ge 0, x_0 \ge 0
+```
+
+INITIALIZE-SIMPLEX(A,b,c)
+
+```
+b[k] = min{b[i]}
+if b[k] >=0 return ({1,2,..,n},{n+1,...,n+m},A,b,c,0)
+form Laux
+get Laux's slack form (N,B,A,b,c,v)
+l=n+k // l point to b[k]'s line
+// x[0]进基，x[l](b[k])离基。
+(N,B,A,b,c,v) = PIVOT(N,B,A,b,c,v,l,0)
+solve Laux
+if optimal of Laux = 0
+  if x[0] is basic variable
+    choose any of x[i] that a[0][e]!=0 to enter, x[0] to leave
+  从Laux的final slack form中去掉x[0]
+  z = 原表达式，并将B换成N
+  return this form
+else return "infeasible"
+```
+
+**定理**: 若L无可行解，则INIT这回infeasible。否则返回的slack form的basic solution可行。
+
+**证明**:
+若L无可行解，由前面定理，我们知道，
+Laux的optimal value不是0.而`$x_i=0, x_0=min{b_i}$`，可得一个有限解。所以会返回infeasible.
+
+若L有可行解，如果`$b_i\ge 0$`，则有解返回了。
+
+若确实有`$b_k<0$`，则`$b_l<0,bl\le b_i$`
+设做了PIVOT后,`$\hat{b}, \hat{B}$`，则只需证明`$\overline{x_e}\ge 0, \overline{x_i}\ge 0$`
+我们有
+
+```latex
+\overline{x_e} = \frac{b_l}{a_{le}}
+\hat{b_e} = \frac{b_l}{a_{le}}
+b_l<0, a_{le}=-1 \rightarrow \overline{x_e}>0
+```
+
+```latex
+\overline{x_i} = b_i - a_{ie}\hat{b_e} = b_i - a_{ie}\frac{b_l}{a_{le}}
+a_{ie}=a_{le}=-1 \rightarrow \overline{x_i}=b_i-b_l\ge 0
+```
+
+故可行。
+
+然后solve了Laux后，因为L有可行解，所以Laux的optimal=0.
+所以我们解出的`$\overline{x_0}=0$`. remove `$\overline{x_0}$`后，所返回的自然是可行的slack form.
