@@ -158,7 +158,7 @@ f_{uv} \ge 0
 ```latex
 min 0
 subject to
-\qquad \sum_{i=1}{k} \le c(u,v)
+\qquad \sum_{i=1}^{k} f_{iuv} \le c(u,v)
 \qquad \sum f_{iuv} - \sum f_{ivu} = 0 for each i=1~k, u\in V-{s,t}
 \qquad \sum_{v \in V} f_{i,s_i,v} - \sum f_{i,v,s_i} = d_i
 f_{iuv} \ge 0
