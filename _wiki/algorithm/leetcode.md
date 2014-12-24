@@ -128,8 +128,8 @@ row_mask[row][i] || col_mask[col][i] || area_mask[area][i]
 
 Thus is very fast.
 
-permutation II
---------------
+permutation II [hard]
+---------------------
 
 https://oj.leetcode.com/problems/permutations-ii/
 
