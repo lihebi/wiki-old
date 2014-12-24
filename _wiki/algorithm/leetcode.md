@@ -127,3 +127,105 @@ row_mask[row][i] || col_mask[col][i] || area_mask[area][i]
 ```
 
 Thus is very fast.
+
+permutation II
+--------------
+
+https://oj.leetcode.com/problems/permutations-ii/
+
+Given a collection of numbers that might contain duplicates, return all possible unique permutations.
+
+For example,
+[1,1,2] have the following unique permutations:
+[1,1,2], [1,2,1], and [2,1,1].
+
+### My Solution
+
+First sort num.
+Then, we have the function `Insert(int idx,int start)`.
+It add num[idx] to one of the position from v[start] to v[end].
+In side each Insert, insert its following number.
+Use either `Insert(idx+1,i+1)` for the same number
+or `Insert(idx+1,0)` for different number.
+
+Keep the initial value as -100, which we assume will never appear in num.
+Every time we change `this->v[i]`, we need to set it back to -100 again right after it.
+
+Only when the last element fits in a position do we push it to vl.
+
+```cpp
+// 136ms
+class Solution {
+public:
+  vector<vector<int> > permuteUnique(vector<int> &num) {
+    Insert(0,0);
+    this->num = num;
+    sort(this->num.begin(),this->num.end());
+    for (int i=0;i<num.size();i++) {
+      this->v.push_back(-100);
+    }
+    this->size = num.size();
+    Insert(0,0);
+    return this->vl;
+  }
+  void Insert(int idx, int start) {
+    for(int i=start;i<this->size;i++) {
+      if (this->v[i] == -100) {
+        this->v[i] = this->num[idx];
+        if (idx==this->size-1) {
+          this->vl.push_back(this->v);
+          this->v[i] = -100;
+          return;
+        }
+        if (this->num[idx]==this->num[idx+1]) {
+          Insert(idx+1,i+1);
+        } else {
+          Insert(idx+1,0);
+        }
+        this->v[i] = -100;
+      }
+    }
+  }
+private:
+  vector<vector<int> > vl;
+  vector<int> num;
+  vector<int> v;
+  int size;
+};
+```
+
+### Others' Solution
+
+Push num into vv.
+Then, pos iterators through num.
+In each iteration, the numbers before pos is set.
+
+For every pos, sort all vectors in vv from pos+1 to end.
+Then, exchange v[pos] with v[every unique number] once.
+
+```cpp
+vector<vector<int> > vv;
+vv.push_back(num);
+int pos=0;
+while(pos<num.size()-1){
+  int size = vv.size();
+  for(int i=0; i<size; i++){
+    //sort the array, so that the same number will be together
+    sort(vv[i].begin()+pos, vv[i].end());
+    //take each number to the first
+    for (int j=pos+1; j<vv[i].size(); j++) {
+      vector<int> v = vv[i];
+      //skip the same number
+      if (j>0 && v[j]==v[j-1]){
+        continue;
+      }
+      int t = v[j];
+      v[j] = v[pos];
+      v[pos] = t;
+      vv.push_back(v);
+    }
+  }
+  pos++;
+}
+return vv;
+```
