@@ -229,3 +229,32 @@ while(pos<num.size()-1){
 }
 return vv;
 ```
+
+Maximum Gap
+-----------
+
+https://oj.leetcode.com/problems/maximum-gap/
+
+Given an unsorted array, find the maximum difference between the successive elements in its sorted form.
+
+Try to solve it in linear time/space.
+
+### Algorithm
+
+1. Find the max and min of the array.
+2. Define (max-min)/num.size() buckets.
+3. Fall each number into a bucket as follows:
+
+```cpp
+int idx = (num[i] - min) / bucket_size ;
+if (buckets[idx].empty()){
+  buckets[idx].push_back(num[i]);
+  buckets[idx].push_back(num[i]);
+}else{
+  buckets[idx][0] = buckets[idx][0] > num[i] ? num[i] : buckets[idx][0];
+  buckets[idx][1] = buckets[idx][1] < num[i] ? num[i] : buckets[idx][1];
+}
+```
+
+So after that, in each bucket, first is min, and last is max.
+The max gap can never lie within a bucket, so just calculate the gap between them.
