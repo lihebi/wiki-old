@@ -10,6 +10,11 @@ ctags -R --c++-kinds=+px
 
 std::unique_ptr<Type> ptr; // ensure that the pointer is deleted after going out of scope.
 
+static function:
+
+`c static function`: this funciton can only be seen in the same file.
+`c++ class member static method`: this function can be called on the class itself. e.g. `TheClass::func()`, instead of call on an instance. `TheClass::Instance().func()`
+
 std::move
 
 ```c++
