@@ -4,6 +4,130 @@ title: aaa
 
 # Just A Buffer
 
+std::find
+=========
+
+Returns an iterator to the first element in the range [first,last) that compares equal to val. If no such element is found, the function returns last.
+
+```cpp
+template<class InputIterator, class T>
+  InputIterator find (InputIterator first, InputIterator last, const T& val)
+{
+  while (first!=last) {
+    if (*first==val) return first;
+    ++first;
+  }
+  return last;
+}
+```
+
+std::find_if
+============
+
+Returns an iterator to the first element in the range [first,last) for which pred returns true. If no such element is found, the function returns last.
+
+```cpp
+template<class InputIterator, class UnaryPredicate>
+  InputIterator find_if (InputIterator first, InputIterator last, UnaryPredicate pred)
+{
+  while (first!=last) {
+    if (pred(*first)) return first;
+    ++first;
+  }
+  return last;
+}
+```
+
+for example
+
+```cpp
+template <typename T>
+class is_greater_than
+{
+public:
+   is_greater_than (const T & n)
+      : value(n)
+   {}
+
+   bool operator() (const T & element) const
+   {
+      return element > value;
+   }
+
+private:
+   T value;
+};
+```
+
+use here:
+
+```cpp
+if (
+find_if (values.begin(), values.end(), is_greater_than<int> (5))
+!= values.end()
+)
+```
+
+trim a string
+===============
+
+```cpp
+#include <algorithm> 
+#include <functional> 
+#include <cctype>
+#include <locale>
+
+// trim from start
+static inline std::string &ltrim(std::string &s) {
+        s.erase(s.begin(), std::find_if(s.begin(), s.end(), std::not1(std::ptr_fun<int, int>(std::isspace))));
+        return s;
+}
+
+// trim from end
+static inline std::string &rtrim(std::string &s) {
+        s.erase(std::find_if(s.rbegin(), s.rend(), std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+        return s;
+}
+
+// trim from both ends
+static inline std::string &trim(std::string &s) {
+        return ltrim(rtrim(s));
+}
+```
+
+split a string
+==============
+
+```cpp
+string s("Somewhere down the road");
+    istringstream iss(s);
+
+    do
+    {
+        string sub;
+        iss >> sub;
+        cout << "Substring: " << sub << endl;
+    } while (iss);
+```
+
+```cpp
+std::vector<std::string> &split(const std::string &s, char delim, std::vector<std::string> &elems) {
+    std::stringstream ss(s);
+    std::string item;
+    while (std::getline(ss, item, delim)) {
+        elems.push_back(item);
+    }
+    return elems;
+}
+
+
+std::vector<std::string> split(const std::string &s, char delim) {
+    std::vector<std::string> elems;
+    split(s, delim, elems);
+    return elems;
+}
+```
+
 middle order traverse's two different implement:
 
 ```c
