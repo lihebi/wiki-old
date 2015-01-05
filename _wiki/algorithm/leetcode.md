@@ -14,6 +14,11 @@ Each number in C may only be used once in the combination.
 
 ### Solution
 
+push_back() and pop_back() should always appear together.
+inside them, the result for the current index is 1.
+out of them, is 0.
+Then I can add the result v to the final result vectors.
+v is changing all the time.
 
 ```cpp
 class Solution {
