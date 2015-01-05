@@ -2,6 +2,79 @@
 title: Leetcode
 ---
 
+Combination Sum II (subsetsum)
+------------------------------
+
+https://oj.leetcode.com/problems/combination-sum-ii/
+
+
+Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+
+Each number in C may only be used once in the combination.
+
+### Solution
+
+
+```cpp
+class Solution {
+public:
+  vector<vector<int> > combinationSum2(vector<int> &num, int target) {
+    sort(num.begin(), num.end());
+    recur(num, target, 0);
+    return result;
+  }
+  void recur(vector<int> &num, int t, int idx) {
+    if (t<0) return;
+    if (t==0) {
+      result.push_back(v);
+      return;
+    }
+
+    for (int i=idx;i<num.size();i++) {
+      // can't go from 0 to 1.
+      // for example, 2, 2, 2
+      // 0 1 1 is not accepted.
+      if (i>idx && num[i] == num[i-1]) {
+        continue;
+      }
+      // here, add this number.
+      v.push_back(num[i]);
+      if (t>=num[i]) recur(num, t-num[i], i+1);
+      v.pop_back();
+      // here, disregard this number
+    }
+
+  }
+private:
+  vector<int> v;
+  vector<vector<int> > result;
+};
+```
+
+Combination Sum (subsetsum)
+---------------------------
+
+https://oj.leetcode.com/problems/combination-sum/
+
+Given a set of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+
+The same repeated number may be chosen from C unlimited number of times.
+
+### Solution
+only need to change
+
+```
+recur(num, t-num[i], i+1);
+```
+
+to
+
+```
+recur(num, t-num[i], i);
+```
+
+
+
 Majority Element [EASY]
 -----------------------
 
