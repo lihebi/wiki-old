@@ -22,6 +22,7 @@ c # when paused, continue
 p i # print variable i
 p $r3 # print register r3
 p/d $r3 # print register r3 as integer format
+display $r3 # will display r3 for each of following operation.
 
 disas func # disassembly func routine.
 disas # disassembly current routine.
@@ -29,6 +30,21 @@ bt # check function stack
 finish # finish current function
 q # quit
 ```
+
+Commands
+-------
+
+### Breakpoint
+
+* `b F`                     Set a break-point at function F.
+* `b *A`                    Set a break-point at absolute address A
+* `b N`                     Set a break-point at line number N.
+* `b N:F`                   Set a break-point at line number N at file F.
+
+* `info b`                  Lists break-points.
+* `cond B cond`             Set a condition to a break-point B.
+* `cond B`                  Remove the condition of a break-point B.
+* `delete B`                Delete a break-point B.
 
 
 Set up on Mac
