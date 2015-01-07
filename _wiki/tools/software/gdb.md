@@ -40,7 +40,6 @@ Commands
 * `b *A`: Set a break-point at absolute address A
 * `b N`: Set a break-point at line number N.
 * `b N:F`: Set a break-point at line number N at file F.
-
 * `info b`: Lists break-points.
 * `cond B cond`: Set a condition to a break-point B.
 * `cond B`: the condition of a break-point B.
@@ -64,6 +63,7 @@ Commands
 * `x /CT A`: Examining memory where:
 
 `C`: number of units to display.
+
 `T`:
 
 ```
