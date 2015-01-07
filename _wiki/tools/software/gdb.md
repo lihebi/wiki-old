@@ -36,15 +36,47 @@ Commands
 
 ### Breakpoint
 
-* `b F`                     Set a break-point at function F.
-* `b *A`                    Set a break-point at absolute address A
-* `b N`                     Set a break-point at line number N.
-* `b N:F`                   Set a break-point at line number N at file F.
+* `b F`: Set a break-point at function F.
+* `b *A`: Set a break-point at absolute address A
+* `b N`: Set a break-point at line number N.
+* `b N:F`: Set a break-point at line number N at file F.
 
-* `info b`                  Lists break-points.
-* `cond B cond`             Set a condition to a break-point B.
-* `cond B`                  Remove the condition of a break-point B.
-* `delete B`                Delete a break-point B.
+* `info b`: Lists break-points.
+* `cond B cond`: Set a condition to a break-point B.
+* `cond B`: the condition of a break-point B.
+* `delete B`: a break-point B.
+
+### Step
+
+* `stepi or si`: Execute one machine instruction (follows a call).
+* `step or s`: Execute one C-program statement (steps into functions).
+* `stepi N`: N machine instructions.
+* `nexti or ni`: as si but execute calls as one instructions.
+* `next or n`: as ni but execute functions as one statement.
+* `bt`: Show names of the stack frames.
+* `up`: Go up one stack frame.
+* `down`: down one stack frame.
+
+### Examining
+
+* `info reg`: contents of registers.
+* `p V`: print variable V
+* `x /CT A`: Examining memory where:
+
+`C`: number of units to display.
+`T`:
+
+```
+x hex integer.
+d dec integer.
+u unsigned dec integer.
+o octal integer.
+c character.
+s null terminated string.
+i as machine instruction.
+```
+
+`A`: an absolute address or $reg pointed by some register.
 
 
 Set up on Mac
