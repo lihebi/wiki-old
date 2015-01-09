@@ -2,6 +2,32 @@
 title: Leetcode
 ---
 
+Largest Rectangle in Histogram
+------------------------------
+
+https://oj.leetcode.com/problems/largest-rectangle-in-histogram/
+
+```cpp
+int largestRectangleArea(vector<int> &height) {
+  stack<int> s;
+  int result=0;
+  height.push_back(0); // important!!
+  for (int i=0;i<height.size();i++) {
+    if (s.size()==0 || height[i]>=height[s.top()]) {
+      s.push(i);
+      continue;
+    }
+    int top = s.top();
+    s.pop();
+    int area = s.size()>0?(i-s.top()-1):i;
+    area *= height[top];
+    result = result>area?result:area;
+    i--;
+  }
+  return result;
+}
+```
+
 Combination Sum II (subsetsum)
 ------------------------------
 
