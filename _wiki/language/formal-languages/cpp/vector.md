@@ -12,6 +12,10 @@ with flag `-std=c++11`
 vector<int> v {1,2,3};
 ```
 
+```cpp
+vector< vector<int> > heights(row, vector<int> col);
+```
+
 functions
 ---------
 
