@@ -2,6 +2,33 @@
 title: Leetcode
 ---
 
+Maximal Rectangle
+-----------------
+
+https://oj.leetcode.com/problems/maximal-rectangle/
+
+use largest rectangle function
+
+```cpp
+int maximalRectangle(vector<vector<char> > &matrix) {
+  if (matrix.size()==0) return 0;
+  int row = matrix.size();
+  int col = matrix[0].size();
+  vector<vector<int> > vv(row, vector<int>(col));
+  int result=0;
+  for (int i=0;i<row;i++) {
+    for (int j=0;j<col;j++) {
+      if (matrix[i][j]=='1') {
+        vv[i][j] = i==0?1:vv[i-1][j]+1;
+      }
+    }
+    int area = largestRectangleArea(vv[i]);
+    result = result<area?area:result;
+  }
+  return result;
+}
+```
+
 Largest Rectangle in Histogram
 ------------------------------
 
