@@ -13,7 +13,13 @@ vector<int> v {1,2,3};
 ```
 
 ```cpp
-vector< vector<int> > heights(row, vector<int> col);
+int row,col;
+vector< vector<int> > heights(row, vector<int>(col));
+```
+
+```cpp
+char init[] = "1111";
+vector<char> v(init, end(init)-1); // remove '\0'
 ```
 
 functions
