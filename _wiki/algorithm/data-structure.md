@@ -59,11 +59,11 @@ title: data structure
 * 把`k1`拎起来
 * `Y`挂到`k2`的左子树上
 
-![](https://farm9.staticflickr.com/8640/15627348063_ec087b874a_n.jpg))
+![](https://farm9.staticflickr.com/8640/15627348063_f3c9f7883b_o.jpg))
 
 下面是一个实际的例子
 
-![](https://farm8.staticflickr.com/7535/16061388267_7abfaab16e_n.jpg)
+![](https://farm8.staticflickr.com/7535/16061388267_d226b3d4a3_o.jpg)
 
 ### 双旋转
 
@@ -72,11 +72,11 @@ k2那个分支太深了,单旋转解决不了.双旋转修复法:
 * 把`k2`拎起来
 * `B`,`C`分别放到左右子树上.
 
-![](https://farm8.staticflickr.com/7566/16245386281_cf0b3f5303_n.jpg)
+![](https://farm8.staticflickr.com/7566/16245386281_f590d98a1b_o.jpg)
 
 下面是实际的例子.
 
-![](https://farm9.staticflickr.com/8564/16061392017_2ed41485d6_n.jpg)
+![](https://farm9.staticflickr.com/8564/16061392017_3c30b26cd4_o.jpg)
 
 
 # 堆
