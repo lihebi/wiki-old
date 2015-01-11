@@ -38,7 +38,7 @@ mymm.insert(std::pair<char,int>('a',10));
 mymm.insert(std::pair<char,int>('b',20));
 mymm.insert(std::pair<char,int>('b',30));
 mymm.insert(std::pair<char,int>('b',40));
-mymm.insert(std::make_pair<char,int>('c',50));
+mymm.insert(std::make_pair('c',50));
 mymm.insert(std::pair<char,int>('c',60));
 mymm.insert(std::pair<char,int>('d',60));
 
