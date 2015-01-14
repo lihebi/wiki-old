@@ -2,6 +2,29 @@
 title: aaa
 ---
 
+std::move
+=========
+`#include<utility>`
+
+transfer ownership of the assets and properties of an object directly without having to copy them when the argument is an rvalue.
+
+moved-from object is left in a valid but unspecified state
+
+```cpp
+std::string foo = "foo-string";
+std::string bar = "bar-string";
+std::vector<std::string> myvector;
+myvector.push_back (foo);                    // copies. foo remain.
+myvector.push_back (std::move(bar));         // moves. bar contain unspecified value.
+```
+
+std::reverse
+============
+```cpp
+#include <algorithm>
+reverse(v.begin(), v.end());
+```
+
 # Just A Buffer
 
 Static
