@@ -2,6 +2,53 @@
 title: Leetcode
 ---
 
+Copy List with Random Pointer
+-----------------------------
+
+https://oj.leetcode.com/problems/copy-list-with-random-pointer/
+
+A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
+
+Return a deep copy of the list.
+
+```cpp
+/**
+* Definition for singly-linked list with a random pointer.
+* struct RandomListNode {
+*     int label;
+*     RandomListNode *next, *random;
+*     RandomListNode(int x) : label(x), next(NULL), random(NULL) {}
+* };
+*/
+class Solution {
+public:
+  RandomListNode *copyRandomList(RandomListNode *head) { //*
+
+  }
+};
+```
+
+### My Solution
+First, use the `next` pointer to construct the list, together note down every label with the node in a map. Then deal with the random pointer.
+
+### Others Solution
+1. insert a new node for each node's next position
+
+```
+*       +-------------------------+
+*       |                         v
+*    +--+----+     +-----+    +-------+     +-----+    +-------+     +-----+
+*    | node1 |---> | NEW |----> node2 |---> | NEW |----> node3 |---> | NEW | ---> NULL
+*    +-------+     +-----+    +---+---+     +-----+    +--+----+     +-----+
+*      ^  ^                       |                       |
+*      |  +-----------------------+                       |
+*      +--------------------------------------------------+
+```
+
+2. `(node1->next) -> random  = (node1->random) -> next`
+3. take out all of the "NEW" node
+
+
 Maximal Rectangle
 -----------------
 
