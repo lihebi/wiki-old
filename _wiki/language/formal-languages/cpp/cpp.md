@@ -22,6 +22,14 @@ Tips
 3. 明确指定`char`的类型
 4. 一般用`double`而不用`float`
 
+### Static
+* `static member function`: can use `ClassName::function()` directly
+* `static member variable`: only one object for all instance of the class
+* `static variable`: A static variable inside a function keeps its value between invocations.
+A static global variable or a function is "seen" only in the file it's declared in
+* `static functions`: Static functions are not visible outside of the C file they are defined in.
+
+
 ### 转义
 
 | 代码 | 含义 |
