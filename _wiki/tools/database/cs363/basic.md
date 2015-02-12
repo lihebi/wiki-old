@@ -20,11 +20,11 @@ title: basic
 
 * `selection operator`: select tuples of r that satisfy condition c
 
-$\rho_c(r)$
+`$\rho_c(r)$`
 
 * `projection operator`: retains only X columns. X can be AC, to choose column A and C from r to form a new table.
 
-$\prod_X(r) = {x[X]:x \in r}$
+`$\prod_X(r) = {x[X]:x \in r}$`
 
 | A | B | C |
 | :---: | :---: | :---: |
@@ -33,7 +33,7 @@ $\prod_X(r) = {x[X]:x \in r}$
 | 5 | 6 | 2 |
 | 7 | 8 | 3 |
 
-$\prod_{AC}(r)$
+`$\prod_{AC}(r)$`
 
 | A | C |
 | :---: | :---: |
