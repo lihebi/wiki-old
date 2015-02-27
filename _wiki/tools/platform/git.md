@@ -195,11 +195,15 @@ git commit --amend
 
 使用`HEAD`(版本库)中最新的内容替换此文件。已添加到缓存区和新文件不受影响。
 
+Use when changed a file, but didn't add it. Now you want to discard the change.
+
 ```
 git checkout -- [filename]
 ```
 
 ### Unstage a file
+
+When you add a file, but want to cancel the add. The file will not be changed.
 
 ```
 git reset HEAD <filename>
@@ -237,6 +241,32 @@ git reset --hard HEAD^
 ```
 git reflog # 列出每一次命令的commit 和 id
 git reset --head <commit ID>
+```
+
+### Ignore changes on some files or directory
+I have some files that have been tracked, but I don't want to commit its change.
+
+```
+git update-index --assume-unchanged <file>
+```
+
+list the files that is ignored:
+
+```
+git ls-files -v|grep '^h'
+```
+
+go back
+
+```
+git update-index --no-assume-unchanged <file>
+```
+
+add shortcuts
+
+```
+git config --global alias.ignore update-index --assume-unchanged
+git config --global alias.notice update-index --no-assume-unchanged
 ```
 
 .gitignore
