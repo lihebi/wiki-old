@@ -250,6 +250,24 @@ I have some files that have been tracked, but I don't want to commit its change.
 git update-index --assume-unchanged <file>
 ```
 
+It can not be used on directories. Then you can do:
+
+```
+git update-index --assume-unchanged $(git ls-files | tr '\n' ' ')
+```
+
+or
+
+```
+git ls-files | tr '\n' ' ' | xargs git update-index --assume-unchanged
+```
+
+But If file name contains blank:
+
+```
+git ls-files -z | xargs -0 git update-index --assume-unchanged
+```
+
 list the files that is ignored:
 
 ```
