@@ -2,7 +2,8 @@
 title: shell script new
 ---
 
-# Shell Script
+Shell Script
+============
 
 用if比较两个字符串是否相等。
 
@@ -23,3 +24,20 @@ fi
 
 
 但是，实际使用时，如果使用`/bin/sh`解析的话，`[]`也可以解析`==`，但是`zsh`是不能解析的。
+
+Other
+=====
+
+```
+find . -name "*.jml" | while read -r line; do
+  filename=`echo $line | sed -e 's/\//g' | awk '{print $NF}'`
+  cp $line "tmp/$filename"
+done
+```
+
+```
+case $line in
+  *jml) echo "xxx"
+  *) echo "other"
+esac
+```
