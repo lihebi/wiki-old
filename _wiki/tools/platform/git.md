@@ -43,6 +43,10 @@ git config --global alias.lg \
 --abbrev-commit"
 ```
 
+```sh
+git lg -p # show the diff together
+```
+
 Concepts
 --------------------------------------
 
