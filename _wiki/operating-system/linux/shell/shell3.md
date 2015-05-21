@@ -28,14 +28,14 @@ fi
 Other
 =====
 
-```
+```sh
 find . -name "*.jml" | while read -r line; do
   filename=`echo $line | sed -e 's/\//g' | awk '{print $NF}'`
   cp $line "tmp/$filename"
 done
 ```
 
-```
+```sh
 case $line in
   *jml) echo "xxx"
   *) echo "other"
