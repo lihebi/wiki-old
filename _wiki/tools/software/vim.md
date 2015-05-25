@@ -69,6 +69,12 @@ g Ctrl-g
 
 选中模式下,按`=`缩进文本
 
+### paste
+```
+:set paste
+:set nopaste
+```
+
 ### mark
 
 正常模式下,`ma`添加mark`a`
