@@ -162,6 +162,13 @@ git branch --set-upstream dev origin/dev
 git log --graph
 ```
 
+### Create a new blank branch
+
+```
+git checkout --orphan newbranch
+git rm -rf .
+```
+
 tag
 --------------------------------------
 
