@@ -2,7 +2,9 @@
 title: regexp
 ---
 
-# 符号表
+符号表
+------
+
 | 符号  | 含义 |
 | ---   | --- |
 |  .      | 除了换行符以外的任何字符 |
@@ -23,7 +25,25 @@ title: regexp
 |  \B,\D,\S,\W   | 与小写字母相反 |
 | [a-zA-Z0-9]    |   |
 
-# python 语法
+Lookahead
+---------
+
+* Positive look ahead: `(?=ABC)`. e.g. `hello(?=ABC)`
+* Negative look ahead: `(?!ABC)`: e.g. `hello(?!ABC)`
+* Positive look behind: `(?<=ABC)`: e.g. `(?<=ABC)hello`
+* Negative look behind: `(?<!ABC)`: e.g. `(?<!ABC)hello`
+
+Capturing Group
+---------------
+* `(ABC)`
+* `(ABC)abc\1` Backreference. `\1` matches the result of the first capturing group
+* `(?:ABC)` non-capturing group
+* `$1` insert the first captured group
+
+Language Specific Grammar
+-------------------------
+
+### python
 
 ```
 import re
@@ -49,7 +69,7 @@ m = re.findall("[pattern]", "string")
 type(m) # list, a list of string that match
 ```
 
-# javascript
+### javascript
 
 ```
 // (xxx) 捕获型分组
