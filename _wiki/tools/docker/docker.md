@@ -2,8 +2,6 @@
 title: docker
 ---
 
-# Docker
-
 # Start Docker
 
 ```sh
@@ -39,45 +37,31 @@ docker run learn/tutorial apt-get install -y ping
 * `docker inspect <ID>`
 * `docker images`
 * `docker push`
+* `docker exec <CONTAINER> <CMD> [args]`
 
-# An example of web app
+Docker-run
+----------
 
-```
-docker run -d -P training/webapp python app.py
-```
+* `-i`: interactively
+* `-t`: allocate a pseudo-TTY
 
-note:
-
-* `-d`: run the container in background
-* `-P`: map any required network ports inside the container to our host.
-
-```
-docker ps
+```sh
+docker run -it -d xxx/xxx /bin/bash
 ```
 
-find the PORT 0.0.0.0:49115->5000/tcp
+Docker-exec
+-----------
 
-**49115**
-
-```
-boot2docker ip # => 192.168.59.103
-```
-
-navigate to `192.168.59.103:49115` to see result.
-
-```
-docker logs -f sleepy_hypatia
+```sh
+docker exec -it <CONTAINER> /bin/bash
 ```
 
-check the webapp's log
+Docker-logs
+-----------
 
-* `-f` means watch the output
-
+```sh
+docker logs <CONTAINER>
 ```
-docker top sleepy_hypatia
-```
-
-examine the processes running in the container.
 
 # Images
 
@@ -98,33 +82,6 @@ if not specify `14.04`, it will be `ubuntu:latest`
 
 ```
 docker pull centos
-```
-
-# Dockerfile
-
-sample dockerfile:
-
-```docker
-# this is a comment
-FROM ubuntu:14.04
-MAINTAINER Hebi Li <hebi@example.com>
-RUN apt-get update && apt-get install -y ruby ruby-dev
-RUN gem install sinatra
-```
-
-build the image
-
-```
-docker build -t="lihebi/sinatra:v2" .
-```
-
-* `v2` is optional tag
-* `.` means the dockerfile is in current folder
-
-then push to dockerhub
-
-```
-docker push lihebi/sinatra
 ```
 
 # tips
