@@ -25,3 +25,11 @@ Java中的基本类型大小是固定的。全部都有正负，不存在`unsign
 | long | 64bit | Long |
 | float | 32bit | Float |
 | double | 64bit | Double |
+
+Static Import
+-------------
+
+Static import is a feature
+that allows fields and methods defined in a class as public static
+to be used in Java code
+without specifying the class in which the field is defined.
