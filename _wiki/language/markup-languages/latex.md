@@ -2,7 +2,12 @@
 title: latex
 ---
 
-# latex
+Installation on Mac
+-------------------
+
+```
+/Library/TeX/texbin/
+```
 
 ## Components
 
