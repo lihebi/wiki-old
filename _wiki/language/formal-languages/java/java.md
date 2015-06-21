@@ -33,3 +33,15 @@ Static import is a feature
 that allows fields and methods defined in a class as public static
 to be used in Java code
 without specifying the class in which the field is defined.
+
+Nested class
+============
+
+Class can be defined inside another.
+Non-static nested class is called `Inner class`.
+
+Difference between static nested class and non-static nested class:
+
+1. 要用的话，static的不需要提outer class，但是用non-static必须使用outer的namespace
+2. non-static可以访问outer class的static和非static的member，但是static的只能访问static的member。
+3. non-static的类不能独立创建，必须要有outer class的instance
