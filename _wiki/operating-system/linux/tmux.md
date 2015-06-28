@@ -40,3 +40,17 @@ To reconnect, use `tmux -a t <number>`
 * `!`: close all panes in current window except current pane.
 * `x`: close current pane
 * `t`: time
+
+A workflow of tmux to keep process running while you logoff ssh
+===============================================================
+
+1. `tmux` to start tmux session
+2. start the process inside tmux session
+3. detach tmux session by `Ctrl-B` than `D`
+4. logoff
+5. login again, attach the session by `tmux attack`
+
+To have multiple tmux sessions:
+
+1. name each session by `Ctrl-B` than `$`
+2. get a list of current running sessions: `tmux list-sessions`
