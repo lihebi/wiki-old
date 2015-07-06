@@ -28,6 +28,7 @@ INCLUDES = -I/home/newhall/include  -I../include
 LFLAGS = -L/home/newhall/lib  -L../lib
 LIBS = -lmylib -lm
 SRCS = majority_element.cpp
+# SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 MAIN = myprog
 
