@@ -54,3 +54,11 @@ To have multiple tmux sessions:
 
 1. name each session by `Ctrl-B` than `$`
 2. get a list of current running sessions: `tmux list-sessions`
+
+Configuration
+=============
+The configuration file is `~/.tmux.conf`.
+
+To reload it within tmux, use `<prefix>` + `:source-file ~/.tmux.conf`.
+To reload it out of tmux, use `tmux source-file ~/.tmux.conf`.
+If all tmux sessions are exited, just start tmux will load the new configuration.
