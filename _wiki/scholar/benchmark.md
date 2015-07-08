@@ -14,3 +14,18 @@ C projects with asserts
 * Php-src: https://github.com/php/php-src
 * Numpy: https://github.com/numpy/numpy
 * MySQL: https://github.com/mysql/mysql-server
+
+Java projects with asserts
+==========================
+* http://sourceforge.net/projects/fourever/
+* http://sourceforge.net/projects/acqlite/
+* http://sourceforge.net/projects/anastacia/
+* http://sourceforge.net/projects/antiquity/
+* http://sourceforge.net/projects/asyncfaces/
+* http://sourceforge.net/projects/bioclipse/
+* http://sourceforge.net/projects/bugzillametrics/
+* http://sourceforge.net/projects/cmusphinx/
+* http://sourceforge.net/projects/carrot2/
+* http://sourceforge.net/projects/cleartoolkit/
+* http://sourceforge.net/projects/cweb/
+* http://sourceforge.net/projects/colossus/
