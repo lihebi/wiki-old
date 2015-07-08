@@ -15,6 +15,11 @@ C projects with asserts
 * Numpy: https://github.com/numpy/numpy
 * MySQL: https://github.com/mysql/mysql-server
 
+Opencv contains 3 3rdparty programs, where all the assertions belong:
+* libtiff: http://www.libtiff.org/
+* libjasper: http://www.ece.uvic.ca/~frodo/jasper/
+* libwebp: https://code.google.com/p/webp/
+
 Java projects with asserts
 ==========================
 * http://sourceforge.net/projects/fourever/
