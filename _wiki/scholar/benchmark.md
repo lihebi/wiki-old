@@ -29,3 +29,6 @@ Java projects with asserts
 * http://sourceforge.net/projects/cleartoolkit/
 * http://sourceforge.net/projects/cweb/
 * http://sourceforge.net/projects/colossus/
+* 
+* http://sourceforge.net/projects/controltier
+* http://sourceforge.net/projects/biasviz
