@@ -10,6 +10,8 @@ import os
 for root, dirs, files in os.walk(‘.’):
   for f in files:
     print f
+    print root+'/'+f
+    print os.path.abspath(root+'/'+f)
 ```
 
 执行shell命令
