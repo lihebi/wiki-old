@@ -85,6 +85,13 @@ j xxx # 进入目录。会自动学习你进过的目录，并且只要输个大
 ls -l **/*.sh
 ```
 
+#### Disable zsh git for a single repo
+Inside the repo, type
+
+```
+git config --add oh-my-zsh.hide-status 1
+```
+
 ## homebrew
 
 在github上大概前十的。装软件不用sudo。
