@@ -19,6 +19,18 @@ func returnTuple() -> (Int, Int, Int) {
   return (3,4,5)
 }
 ```
+
+tuple返回值还可以命名，可以用名字或者index使用：
+
+```swift
+func myfunc(scores:[Int]) -> (min: Int, max: Int) {
+  // xxx
+}
+let c = myfunc([5,3,100,9])
+c.max
+c.2
+```
+
 参数不定长
 
 ```
