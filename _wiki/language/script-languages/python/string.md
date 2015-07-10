@@ -25,4 +25,10 @@ Split
 ```python
 s = "xx yy"
 s.split() # => ['xx','yy']
+s.split('/')
 ```
+
+trim
+====
+
+In python, call `str.strip()`
