@@ -2,13 +2,9 @@
 title: string
 ---
 
-## startswidth & endswith
-```python
-s.startswidth('VID'); # => bool
-```
+字符串相加
+==========
 
-
-## 字符串相加
 ```python
 'xxf'+'xxf'
 ```
@@ -19,16 +15,13 @@ i = 1
 'this is '+str(i)
 ```
 
-Split
-=====
+Popular Function
+================
 
-```python
-s = "xx yy"
-s.split() # => ['xx','yy']
-s.split('/')
-```
-
-trim
-====
-
-In python, call `str.strip()`
+* `str.split(sep=None, maxsplit=-1)`: return a list of str.
+sep is by default whitespace. at most maxsplit splits are made.
+* `str.strip()`
+* `str.replace(old,new[,count])`: by default, replace all.
+If count provided, replace the first count.
+* `str.startswidth()`
+* `str.endswidth()`
