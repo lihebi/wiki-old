@@ -1,0 +1,43 @@
+---
+title: shell script new
+---
+
+Shell Script
+============
+
+用if比较两个字符串是否相等。
+
+```sh
+if [ `uname` != "Darwin" ]; then
+  echo "true"
+else
+  echo "false"
+fi
+```
+
+需要注意的问题：比较可以使用`!=`。
+但是，两个字符串和操作符之间必须有空格！！简直坑爹。而且还不报错，直接认为表达式是true。
+另外，`[`和后面的字符串之间也要有空格，否则shell识别不了`[`这个command。这个会报错。
+
+使用`[]`时，比较可以使用`!=`和`=`，而不能使用`==`。
+如果使用`[[]]`，则可以使用`!=`,`=`和`==`。这是所谓的**程序员友好模式**
+
+
+但是，实际使用时，如果使用`/bin/sh`解析的话，`[]`也可以解析`==`，但是`zsh`是不能解析的。
+
+Other
+=====
+
+```sh
+find . -name "*.jml" | while read -r line; do
+  filename=`echo $line | sed -e 's/\//g' | awk '{print $NF}'`
+  cp $line "tmp/$filename"
+done
+```
+
+```sh
+case $line in
+  *jml) echo "xxx"
+  *) echo "other"
+esac
+```
