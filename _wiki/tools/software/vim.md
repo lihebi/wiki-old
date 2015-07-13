@@ -4,6 +4,16 @@ title: vim
 
 # VIM
 
+se & set
+========
+
+```
+:se encoding
+:set encoding=utf8
+:se fileencoding
+:set fileencoding=utf8
+```
+
 # Content Operation
 
 ## Multi line comment
