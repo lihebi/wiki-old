@@ -25,3 +25,12 @@ sep is by default whitespace. at most maxsplit splits are made.
 If count provided, replace the first count.
 * `str.startswidth()`
 * `str.endswidth()`
+
+Encoding
+========
+
+If encounters with bytes, the str will contain `b'xxx'`.
+This cannot be loaded into json.
+`bstr.decode('utf8')` will return the expected string.
+
+`b'23'` can be converted to `int` directly by `int(bstr)`

@@ -41,7 +41,9 @@ Have another 3 similar invariant.
 subprocess.Popen
 ----------------
 ```py
-subprocess.Popen("echo Hello World", shell=True, stdout=subprocess.PIPE).stdout.read()
+p = subprocess.Popen("echo Hello World", shell=True, stdout=subprocess.PIPE)
+p.stdout.read()
+s = subprocess.check_output('wc -l', stdin=p.stdout)
 ```
 
 subprocess.call
