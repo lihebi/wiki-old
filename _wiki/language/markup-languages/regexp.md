@@ -62,8 +62,11 @@ m.group() # 匹配的字符串
 
 m = re.search("[pattern]", "string")
 # search只要有就行
+# if can't find anything, m will simply be None.
 type(m) # _sre.SRE_Match
 m.group()
+
+re.search("pattern", "string", re.IGNORECASE)
 
 m = re.findall("[pattern]", "string")
 type(m) # list, a list of string that match
