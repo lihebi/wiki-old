@@ -1,22 +1,17 @@
 ---
-title: vim
+title: Operation
 ---
 
-# VIM
+Search inline
+=============
 
-se & set
-========
+* `fx`: search `x` in current line
+* `Fx`: search `x` in reverse direction
+* `tx`: `fx`会把光标停留在`x`上，`tx`会停留在`x`前面一个字符上。
+* `Tx`: 停留在`x`后面一个字符上。
 
-```
-:se encoding
-:set encoding=utf8
-:se fileencoding
-:set fileencoding=utf8
-```
-
-# Content Operation
-
-## Multi line comment
+Multi line comment
+==================
 
 Nerd comment
 
@@ -29,14 +24,8 @@ Another method
 `ctrl-v` to enter `visual block` mode.
 Select lines, then `I`, then insert, then `Esc`.
 
-## Search inline
-
-* `fx`: search `x` in current line
-* `Fx`: search `x` in reverse direction
-* `tx`: `fx`会把光标停留在`x`上，`tx`会停留在`x`前面一个字符上。
-* `Tx`: 停留在`x`后面一个字符上。
-
-# Movement
+Movement
+========
 
 * `Ctrl-]` 进入函数
 * `Ctrl-t` 返回
@@ -61,10 +50,8 @@ Select lines, then `I`, then insert, then `Esc`.
 * `<C-e>`: move screen down
 * `<C-y>`: move screen up
 
-
-## 未分类
-
 录制功能
+=======
 
 正常模式下,按`qq...q`进行录制.意思是将`...`录制到`q`里.
 
@@ -72,20 +59,33 @@ Select lines, then `I`, then insert, then `Esc`.
 `@q` `5@q`
 
 单词统计
+=======
 
 g Ctrl-g
+
+Indent
+======
 
 拼写模式下,按`z=`显示提示
 
 选中模式下,按`=`缩进文本
 
-### paste
-```
-:set paste
-:set nopaste
-```
+自动补全
+=======
 
-### mark
+* `Ctrl-p` 上一个
+* `Ctrl-n` 下一个
+
+文件操作
+=======
+
+* `:f <file>` 当前文件改名为file
+* `:w <file>` 当前文件内容写入file
+* `r <file>` file的内容写到当前光标
+* `r !<cmd>` cmd的运行结果写到当前光标
+
+mark
+====
 
 正常模式下,`ma`添加mark`a`
 
@@ -94,33 +94,3 @@ g Ctrl-g
 `:marks` 显示所有mark
 
 特殊mark: ` 跳转前光标位置
-
-## 自动补全
-
-* `Ctrl-p` 上一个
-* `Ctrl-n` 下一个
-
-## 替换
-
-```
-:0,$s/xxx/xxx/g # [range]s/from/to/[flags]
-```
-
-## 多文件
-
-```
-vim -p aaa bbb # 在两个标签中打开
-vim -o aaa bbb # 两个文件上下split
-```
-
-## 文件操作
-
-* `:f <file>` 当前文件改名为file
-* `:w <file>` 当前文件内容写入file
-* `r <file>` file的内容写到当前光标
-* `r !<cmd>` cmd的运行结果写到当前光标
-
-## Other
-```
-:setfiletype python
-```
