@@ -1,10 +1,10 @@
 # Site settings
 title: Hebi's Wiki
-email: your-email@domain.com
+email: lihebi.com@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Hebi's Online Knowledge Book, named Hebi's Wiki
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://lihebi.com" # the base hostname & protocol for your site
 twitter_username: lihebi
 github_username:  lihebi
 
