@@ -14,3 +14,7 @@ g是V上的二元实值函数, x,y,z是V上任意向量, k是实数
 2. g(x+y,z) = g(x,z) + g(y,z)
 3. g(kx,y) = kg(x,y)
 4. g(x,x) >= 0, 且g(x,x)=0 if and only if x=0
+
+Property
+--------
+* distributive: a(b+c) = ab + ac
