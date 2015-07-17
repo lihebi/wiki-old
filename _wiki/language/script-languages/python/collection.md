@@ -2,6 +2,24 @@
 title: Collection
 ---
 
+List
+====
+
+分片
+---
+
+```python
+s[4]
+s[4:]
+```
+
+range
+-----
+
+```python
+l = range(4, 10)
+```
+
 Dict
 ====
 
