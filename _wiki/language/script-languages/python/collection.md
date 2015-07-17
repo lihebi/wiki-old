@@ -35,8 +35,8 @@ import collections
 od = collections.OrderedDict(sorted(d.items()))
 ```
 
-Sort a dict
------------
+Sort a dict by value
+--------------------
 
 ```py
 sorted(dict1, key=dict1.get) # => list
