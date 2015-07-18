@@ -2,7 +2,7 @@
 title: decorator
 ---
 
-@calssmethod
+\@calssmethod
 ============
 
 ```py
@@ -23,7 +23,7 @@ the derived class object is passed as the implied first argument.
 
 It can be used to implement alternative constructors. 但是我没看懂.
 
-@staticmethod
+\@staticmethod
 =============
 
 ```py
