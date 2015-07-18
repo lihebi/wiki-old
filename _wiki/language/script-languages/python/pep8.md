@@ -30,3 +30,7 @@ Expression
 * always use absolute path for import
 * if must use relative path, use explicit `from . import foo` instead of `import foo`
 * always put import at the top. Order: standard lib, 3rd party, your own. With alphabet order.
+
+Tool
+====
+* pylint
