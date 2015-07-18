@@ -2,6 +2,22 @@
 title: Collection
 ---
 
+Tuple
+=====
+
+tuple comparison is: first compare index 0, than index 1, then 2...
+
+The following code will sort the list, but the even numbers before all odd numbers.
+
+```py
+def comp(x):
+  if x%2 == 0:
+    return (0,x)
+  else:
+    return (1,x)
+values.sort(key=comp)
+```
+
 List
 ====
 
