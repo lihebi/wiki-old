@@ -105,6 +105,16 @@ sorted(dict1, key=dict1.get) # => list
 sorted(dict1, key=dict1.get, reverse=True)
 ```
 
+merge dict
+----------
+
+```py
+x = {'a': 1, 'b': 2}
+y = {'b': 3, 'c': 4}
+z = x.copy()
+z.update(y)
+```
+
 Set
 ====
 
