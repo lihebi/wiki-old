@@ -35,6 +35,8 @@ b = s[:-1]
 b[3] = 8 # will not change s
 ```
 
+So this can be use to copy the list: `new_list = l[:]`
+
 But if assgin to the slice, it will change the original list:
 
 ```py
