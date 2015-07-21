@@ -29,6 +29,7 @@ LFLAGS = -L/home/newhall/lib  -L../lib
 LIBS = -lmylib -lm
 SRCS = majority_element.cpp
 # SRCS = $(wildcard *.c)
+# SRCS = $(filter-out support.c, $(wildcard *.c))
 OBJS = $(SRCS:.c=.o)
 MAIN = myprog
 
