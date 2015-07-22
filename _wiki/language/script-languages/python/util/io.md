@@ -26,3 +26,18 @@ f = open('test.txt')
 for line in f:
   print line,
 ```
+
+```py
+with open('a.txt') as f:
+  for line in f:
+    print(line)
+```
+
+Do not keep whole file in memory:
+
+```py
+with open('a.txt') as f:
+  for idx,line in enumerate(f):
+    if idx == 100:
+      print(line)
+```
