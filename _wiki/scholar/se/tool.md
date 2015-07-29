@@ -44,3 +44,7 @@ Code Search
 LOC counter
 ===========
 * [SLOCCount](http://www.dwheeler.com/sloccount/)
+
+Mutation Testing
+================
+* [PIT](http://pitest.org/)
