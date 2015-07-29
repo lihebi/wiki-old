@@ -40,3 +40,7 @@ Code Search
 ===========
 
 * [google codesearch](https://github.com/google/codesearch)
+
+LOC counter
+===========
+* [SLOCCount](http://www.dwheeler.com/sloccount/)
