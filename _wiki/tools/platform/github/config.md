@@ -34,3 +34,9 @@ git config --global alias.lg \
 ```sh
 git lg -p # show the diff together
 ```
+
+color
+
+```
+git config --global color.ui auto
+```
