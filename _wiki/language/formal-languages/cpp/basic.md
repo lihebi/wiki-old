@@ -1,5 +1,5 @@
 ---
-title: C++
+title: C++ Basic
 ---
 
 Tips
@@ -32,35 +32,35 @@ A static global variable or a function is "seen" only in the file it's declared 
 
 ### 转义
 
-| 代码 | 含义 |
-| --- | --- |
-| \n | 换行 |
-| \r | 回车 |
-| \v | 纵向制表 |
-| \b | 退格 |
-| \x加一个或多个16进制的数 | |
-| \加1，2，3个8进制的数 | |
+| 代码                     | 含义     |
+|:-------------------------|:---------|
+| \n                       | 换行     |
+| \r                       | 回车     |
+| \v                       | 纵向制表 |
+| \b                       | 退格     |
+| \x加一个或多个16进制的数 |          |
+| \加1，2，3个8进制的数    |          |
 
 ### 字面值类型
 
 前缀
 
-| 符号 | 含义 | 类型 |
-| --- | --- | --- |
-| u | Unicode16字符 | char16_t |
-| U | Unicode32 | char32_t |
-| L | 宽字符 | wchar_t L'a' |
-| u8 | utf8字符串 | char u8"hi" |
+| 符号 | 含义          | 类型         |
+|:-----|:--------------|:-------------|
+| u    | Unicode16字符 | char16_t     |
+| U    | Unicode32     | char32_t     |
+| L    | 宽字符        | wchar_t L'a' |
+| u8   | utf8字符串    | char u8"hi"  |
 
 后缀
 
-| 符号 | 类型 | 适用于 |
-| --- | --- | --- |
-| U | Unsigned | 整型 |
-| L | long | 整型 |
-| LL | long long | 整型 |
-| F | float | 浮点型 |
-| L | long double | 浮点型 |
+| 符号 | 类型        | 适用于 |
+|:-----|:------------|:-------|
+| U    | Unsigned    | 整型   |
+| L    | long        | 整型   |
+| LL   | long long   | 整型   |
+| F    | float       | 浮点型 |
+| L    | long double | 浮点型 |
 
 对象是指一块能存储数据并具有某种类型的内存空间。
 
