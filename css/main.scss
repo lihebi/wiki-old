@@ -63,7 +63,8 @@ $yellow-color: rgb(222, 192, 123);
   background:         radial-gradient($c1, $c2);
 }
 body {
-  @include radial-gradient(rgb(240,240,240), rgb(190,190,190));
+  // @include radial-gradient(rgb(240,240,240), rgb(190,190,190));
+  @include radial-gradient(rgb(240,240,240), rgb(240,240,240));
 }
 
 #cat {
@@ -122,4 +123,14 @@ h4::before {
 
 .katex-pre {
   padding-left: 20%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 3px 7px 2px 7px;
+}
+
+tr:nth-of-type(odd) {
+  background-color: $grey-color-light;
 }
