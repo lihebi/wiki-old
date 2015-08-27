@@ -81,6 +81,7 @@ On mac:
 
 ```
 g++ -dynamiclib -undefined suppress -flat_namespace *.o -o something.dylib
+g++ -dynamiclib -o libpugi.dylib pugixml.cpp
 ```
 
 Compiler Option的说明：
