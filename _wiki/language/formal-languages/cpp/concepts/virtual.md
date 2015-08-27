@@ -2,6 +2,8 @@
 title: Virtual Method
 ---
 
+# Virtual vs. Non-Virtual
+
 Without `virtual` you get **early binding**. Which implementation of the method is used gets decided at **compile time based on the type of the pointer that you call through**.
 
 With `virtual` you get **late binding**. Which implementation of the method is used gets decided at **run time based on the type of the pointed-to object** - what it was originally constructed as. This is not necessarily what you'd think based on the type of the pointer that points to that object.
@@ -27,3 +29,8 @@ Base* obj = new Derived ();
 obj->Method1 ();  //  Prints "Base::Method1"
 obj->Method2 ();  //  Prints "Derived::Method2"
 ```
+
+# Virtual vs. Pure Virtual
+
+* virtual function `can` be overriden
+* the pure virtual `must` be implemented in non-abstract class
