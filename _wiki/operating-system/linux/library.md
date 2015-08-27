@@ -77,6 +77,12 @@ ln -sf /opt/lib/liba.so.1.0 /opt/lib/liba.so.1
 ln -sf /opt/lib/liba.so.1.0 /opt/lib/liba.so
 ```
 
+On mac:
+
+```
+g++ -dynamiclib -undefined suppress -flat_namespace *.o -o something.dylib
+```
+
 Compiler Option的说明：
 
 * `-Wall`: include all warnings
