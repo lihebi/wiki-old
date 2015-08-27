@@ -19,3 +19,9 @@ predicates(expressions with square brackets) must be preceded by a:
 * another predicate
 
 position predicate must be preceded by a tag name.
+
+or:
+
+```
+//tag1|//tag2/tag22
+```
