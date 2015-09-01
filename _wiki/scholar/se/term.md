@@ -14,3 +14,5 @@ an intermediate representation in which every variable is assigned exactly once
 * `mutation testing`: small syntactical changes are made to random locations in the original program to generate a large number of mutants.
 The test suite is then run against each mutant.
 Use it because known real faults is not practical to get.
+* `signature of function`: its parameter and return types.
+But the official C++ definition of "signature" excludes the function's return type.
