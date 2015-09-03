@@ -16,3 +16,8 @@ The test suite is then run against each mutant.
 Use it because known real faults is not practical to get.
 * `signature of function`: its parameter and return types.
 But the official C++ definition of "signature" excludes the function's return type.
+
+* `functor`: function-like objects
+* `predicate`: a function that returns bool
+* `predicate class`: a functor class whose `operator()` function is a predicate.
+* `pure function`: a function whose return value depends only on its parameters
