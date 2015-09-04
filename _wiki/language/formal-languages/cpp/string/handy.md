@@ -1,9 +1,9 @@
 ---
-title: Handy Routine
+title: handy routine
 ---
 
-trim a string
--------------
+
+## trim a string
 
 ```cpp
 #include <algorithm>
@@ -29,8 +29,7 @@ static inline std::string &trim(std::string &s) {
 }
 ```
 
-split a string
---------------
+## split a string
 
 ```cpp
 string s("Somewhere down the road");
