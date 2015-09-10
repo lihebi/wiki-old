@@ -2,12 +2,24 @@ $(document).ready(function() {
   hljs.initHighlightingOnLoad();
   renderPostList();
   renderKatex();
+  renderUML();
   adjustEdit();
   $('#toc').toc({
     'selectors': 'h2,h3',
     'container': '.post-content'
   });
 })
+
+function renderUML() {
+  $('.uml').each(function() {
+    var thisNode = $(this).get()[0];
+    var canvasNode = document.createElement("canvas");
+    var content = thisNode.innerHTML;
+    thisNode.parentNode.insertBefore(canvasNode, thisNode);
+    thisNode.parentNode.removeChild(thisNode);
+    nomnoml.draw(canvasNode, content);
+  })
+}
 
 function renderPostList() {
   d=[];
