@@ -5,7 +5,7 @@ title: Abstract Factory
 * Implemented by Factory Method.
 * Focus on a family of products.
 
-# UML
+# class diagram
 <script type="text/nomnoml" class="uml">
 [<abstract>AbstractFactory | CreateA(); CreateB()]
 [ConcreteFactory1 | CreateA() | CreateB()]
@@ -33,7 +33,7 @@ Note:
 
 * ConcreteFactory is often singleton
 
-# implement
+# implementation
 
 ```c++
 class AbstractFactory {
