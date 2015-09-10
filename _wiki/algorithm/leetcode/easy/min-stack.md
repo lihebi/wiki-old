@@ -1,5 +1,5 @@
 ---
-title: Min Stack
+title: [Easy] Min Stack
 ---
 # Min Stack
 
