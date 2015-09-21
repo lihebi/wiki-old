@@ -133,3 +133,25 @@ regex_replace(
 ```c++
 std::regex_replace(s, reg, "");
 ```
+
+# iterator
+```c++
+int main()
+{
+  const std::string s = "Quick brown fox.";
+
+  std::regex words_regex("[^\\s]+");
+  std::sregex_iterator words_begin = std::sregex_iterator(s.begin(), s.end(), words_regex);
+  std::sregex_iterator words_end = std::sregex_iterator();
+
+  std::cout << "Found "
+  << std::distance(words_begin, words_end)
+  << " words:\n";
+
+  for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
+    std::smatch match = * i;                                                 
+    std::string match_str = match.str(); 
+    std::cout << match_str << '\n';
+  }   
+}
+```
