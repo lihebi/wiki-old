@@ -60,3 +60,25 @@ std::vector<std::string> split(const std::string &s, char delim) {
   return elems;
 }
 ```
+
+## better split string
+```c++
+// to std::cout
+copy(
+  istream_iterator<string>(iss),
+  istream_iterator<string>(),
+  ostream_iterator<string>(cout, "\n")
+);
+// to a vector
+vector<string> tokens;
+copy(
+  istream_iterator<string>(iss),
+  istream_iterator<string>(),
+  back_inserter(tokens)
+);
+// construct the vector directly
+vector<string> tokens{
+  istream_iterator<string>{iss},
+  istream_iterator<string>{}
+};
+```
