@@ -1,5 +1,5 @@
 ---
-title: shell command
+title: builtin2
 ---
 
 ## 未分类
