@@ -48,6 +48,9 @@ sed '/start/,/stop/ s/#.*//' # by pattern
 # /d: delete the line if match
 sed -i '/@slice/d' $ClassName.java
 sed -i 'g/@slice/d' xx.java # remove all
+sed '/^$/d' # remove all empty lines
+sed '11,$ d' # only output first 10 lines
+sed '1,/^$/ d' # delete everything up to the first blank line.
 ```
 
 * s(substitute): s/pattern/string/
