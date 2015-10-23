@@ -14,3 +14,10 @@ title: vim
 vim -p aaa bbb # 在两个标签中打开
 vim -o aaa bbb # 两个文件上下split
 ```
+
+## count
+first, search it. Then
+
+```
+:%s///gn
+```
