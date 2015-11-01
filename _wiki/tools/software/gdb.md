@@ -5,7 +5,8 @@ title: gdb
 Usage
 -----
 
-```
+```sh
+gcc -g xx.c # without any optimization (i.e. no -O2 flag).
 gdb myprog
 ```
 
@@ -16,13 +17,22 @@ break 12 # add breakpoint on line 12
 break myfunc # add breakpoint on the entry of myfunc
 info break # show all break point info
 r # run. will pause on breakpoint
+run 4 -s Doc! # 4 -s Doc! will be the argv
 n # when paused, run next line
-stepi # step in a routine.
+stepi # step in a routine. # Do not step into system library calls
 c # when paused, continue
 p i # print variable i
 p $r3 # print register r3
 p/d $r3 # print register r3 as integer format
 display $r3 # will display r3 for each of following operation.
+
+print mystruct->data
+set mystruct->data = 42
+
+ptype va # the type of the variable
+clear xx # clear the specific break point
+
+help # show help
 
 disas func # disassembly func routine.
 disas # disassembly current routine.
