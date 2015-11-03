@@ -2,167 +2,95 @@
 title: emacs
 ---
 
-## 快捷键
+# cmd
+* `C-x C-c`: exit
+* `C-x l`: kill all other windows
+* `C-h t`: help -> tutorial
+* `C-x u`: undo
+* `C-_`: undo
+* `C-x C-f`: find a file
+* `C-x C-s`: save
+保存时，可能freeze, to unfreeze, `C-q`
 
-C => Ctrl
-M => Alt
-M-x == Esc x
+# Move
 
-#### General
-```
-C-g # 取消
-C-<SPC> # 开启选中模式
-C-w # 删除选中
-```
-
-#### C-x
-
-```
-C-x C-c # exit
-```
-
-#### Move
-
-Ctrl
-
-* `C-a`
-* `C-e`
-* `C-n`: next
-* `C-p`: previous
-* `C-f`: forward
-* `C-b`: backward
 * `C-v`: page down
-* `Esc v`: == C-v
-* `C-l`: place cursor in center, top, bottom
-
-* `ctrl-shift-a`: 从光标到行首，选中
-* `ctrl-shift-e`: 从光标到行尾，选中
-
-Meta(Alt)
-
-* `M-f` # to the end of the word
-* `M-b` # to the beginning of the word
-* `M-a` # to the beginning of a sentence
-* `M-e` # to the end of a sentence
-
-* `M-<` move to top of screen
-* `M->` move to bottom of screen
-
-* `M-r`: jump amoung top,middle,bottom of the screen
 * `M-v`: page up
+* `Esc v`: page up
 
-#### 重复
+* `C-l`: place cursor in center, top, bottom
+* `C-u 0 C-l`: 当前行top == `C-l C-l`
+* `M-r`: jump amoung top,middle,bottom of the screen
 
-```
-C-u 8 <xx> # <xx>执行8次
-C-u 8 * # 插入8个*
-C-u 0 C-l top # == C-l C-l
-```
+* `C-npfb`
+* `M-fb`
+* `C-ae`
+* `M-ae`: sentence
+* `M-<`: to begin of whole doc
+* `M->`: to end of doc
 
-例外：
+* `C-u 8 C-f`: 8 times `C-f`
+* `C-u 8 *` # 插入8个*
+* `C-u 2 C-v`: scroll 2 lines
 
-```
-C-u 8 C-v 滚动8行
-```
+* `C-g`: stop
 
-#### delete & kill & yank
+# edit
+delete: 删除. kill: 剪切.
+只删除一个字符，或空白，是delete。其余情况均是kill.
 
-```
-C-d # delete
-C-h # backspace
-M-d # delete a word
-C-k # kill to the end of line
-C-k C-k # kill the line breaker, J
-M-k # kill to the end of sentence
-```
-kill 可以被yank C-y
-delete 不可以
+* `C-d` # delete
+* `C-h` # backspace
+* `M-d` # delete a word
+* `M-Del`
+* `C-k` # kill to the end of line
+* `C-k C-k` # kill the line breaker, J
+* `C-u 2 C-k`: kill 2 lines
+* `M-k` # kill to the end of sentence
+* `C-<space>`, move to another place, `C-w`: kill everything in between
 
-```
-C-y # yank
-```
-连续C-k几次，然后C-y会粘贴所有
-C-y粘贴最近的一次kill，使用C-y后再立即使用M-y会将刚才粘贴的东西变成上一次kill的东西，
-再按一次会再往前，直到循环，然后继续重复。
+* `C-y`: yank
+* `M-y`:
+* 连续C-k几次，然后C-y会粘贴所有.
+* C-y粘贴最近的一次kill，使用C-y后再立即使用M-y会将刚才粘贴的东西变成上一次kill的东西，
+再按一次会再往前，直到循环，然后继续重复。可以使用`C-u`加负参数。
 
-#### undo
 
-```
-C-/ undo
-C-_
-C-x u
-```
+## buffer
 
-#### file
+* `C-x C-b`: list buffers
+* `C-x b`: switch to that buffer
+* `C-x s`: save all buffers. If one buffer is changed and switched to another, it is not saved automatically.
 
-```
-C-x C-f find a file, and open it
-C-x C-s save
+## Mode
 
-C-x C-b list buffers
-C-x b, than buffer name switch to that buffer
+* `M-x fundamental mode`: switch to fundamental mode
+* `M-x text mode`
+* `M-x auto fill mode`
 
-C-x C-c end emacs session. will ask to save
-```
+## Search
 
-#### suspend
-
-`C-z` suspend emacs
-* UI: minimize
-* terminal: to bg. type bg to list some.
-
-```
-jobs # list too.
-fg # to bring it out.
-fg %emacs
-```
-
-#### Mode
-
-```
-M-x fundamental-mode switch to fundamental mode
-M-x text-mode
-auto-fill-mode: 单词自动换行.默认margin是70.可以换：C-u 20 C-x f
-or: C-x f, than 20
-auto-fill-mode可以toggle
-改变了默认margin后，emacs不会re-fill for you.自己refill current cursor：M-q
-
-C-h m open doc for modes
-```
-
-#### Search
-
-```
-C-s
-C-r： 反方向
+* `C-s`
 C-s再按一次会选中下一个，回车结束。
-```
+* `C-r`： 反方向
 
-#### 窗口
+## 窗口
 
-```
-C-x 1 # kill all other window
-C-x 2
-C-M-v # scroll the bottom window
-C-x o # move cursor to other window
+* `C-x 1`: kill all other window
+* `C-x 2`: split vertical
+* `C-x 3`: 水平分割
+* `C-M-v`: scroll the other window
+* `C-x o`: move cursor to other window
 
-C-x 3 # 水平分割
-C-x 4 # C-f find file in new window
+* `M-x make-frame`: 产生新的窗口
+* `M-x delete-frame`
 
-M-x make-frame # 产生新的窗口
-M-x delete-frame
-```
+## Help
 
-关闭最后一个frame时，session退出
-
-#### Help
-
-```
-C-h ? # really help
-C-h c C-p # very brief one line description of the command
-C-h k C-p # more help
-C-h f # previous-line describe a function
-C-h v xxx # display doc of variables
-C-h a file # display M-x command that has ‘file’
-C-h i # read info pages
-```
+* `C-h ?`: really help
+* `C-h c <cmd(s)>`: very brief one line description of the command
+* `C-h k <C-p>`: more help
+* `C-h f`: previous-line describe a function
+* `C-h v xxx`: display doc of variables
+* `C-h a file`: display M-x command that has ‘file’
+* `C-h i`: read info pages
