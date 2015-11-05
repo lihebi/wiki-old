@@ -6,8 +6,7 @@ title: emacs
 * `C-x C-c`: exit
 * `C-x l`: kill all other windows
 * `C-h t`: help -> tutorial
-* `C-x u`: undo
-* `C-_`: undo
+* `C-/`: undo `C-x u`, `C-_`
 * `C-x C-f`: find a file
 * `C-x C-s`: save
 保存时，可能freeze, to unfreeze, `C-q`
@@ -61,6 +60,8 @@ delete: 删除. kill: 剪切.
 * `C-x C-b`: list buffers
 * `C-x b`: switch to that buffer
 * `C-x s`: save all buffers. If one buffer is changed and switched to another, it is not saved automatically.
+* `<Esc><Esc><Esc>`: general purpose "get out"
+
 
 ## Mode
 
@@ -81,6 +82,7 @@ C-s再按一次会选中下一个，回车结束。
 * `C-x 3`: 水平分割
 * `C-M-v`: scroll the other window
 * `C-x o`: move cursor to other window
+* `C-x 4 C-f`: find file in bottom other window
 
 * `M-x make-frame`: 产生新的窗口
 * `M-x delete-frame`
