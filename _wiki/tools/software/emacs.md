@@ -47,7 +47,7 @@ delete: 删除. kill: 剪切.
 * `C-x b`: switch to that buffer
 * `C-x s`: save all buffers. If one buffer is changed and switched to another, it is not saved automatically.
 * `<Esc><Esc><Esc>`: general purpose "get out"
-
+* `C-x k`: kill current buffer
 
 ## Mode
 

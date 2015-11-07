@@ -18,6 +18,7 @@ title: info
 * `q`: quit
 * `s`: search
 * `g`: go to a node by name
+* `l`: back
 
 # menu
 * The beginning of a menu is always identified by a line which starts with `* Menu:`
