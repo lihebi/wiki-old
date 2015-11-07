@@ -1,6 +1,12 @@
 ---
 title: emacs
 ---
+# some packages & repos & mature preconfiged emacs
+* prelude
+* spacemacs
+* projectile
+* Sacha Chua's config
+
 
 # cmd
 * `C-x C-c`: exit
@@ -13,26 +19,6 @@ title: emacs
 
 # Move
 
-* `C-v`: page down
-* `M-v`: page up
-* `Esc v`: page up
-
-* `C-l`: place cursor in center, top, bottom
-* `C-u 0 C-l`: 当前行top == `C-l C-l`
-* `M-r`: jump amoung top,middle,bottom of the screen
-
-* `C-npfb`
-* `M-fb`
-* `C-ae`
-* `M-ae`: sentence
-* `M-<`: to begin of whole doc
-* `M->`: to end of doc
-
-* `C-u 8 C-f`: 8 times `C-f`
-* `C-u 8 *` # 插入8个*
-* `C-u 2 C-v`: scroll 2 lines
-
-* `C-g`: stop
 
 # edit
 delete: 删除. kill: 剪切.
