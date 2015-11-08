@@ -6,32 +6,32 @@ title: table
 
 ! is |
 
-| shortcut  | command                                   | description              |
-|-----------+-------------------------------------------+--------------------------|
-| `C-c !`   | `org-table-create-or-convert-from-region` | can parse csv,tab,spc    |
-| `C-c C-c` | `org-table-align`                         |                          |
-| `M-a`     | `org-table-beginning-of-field`            |                          |
-| `M-e`     | `org-table-end-of-field`                  |                          |
+| shortcut  | command                                   | description           |
+|-----------+-------------------------------------------+-----------------------|
+| `C-c !`   | `org-table-create-or-convert-from-region` | can parse csv,tab,spc |
+| `C-c C-c` | `org-table-align`                         |                       |
+| `M-a`     | `org-table-beginning-of-field`            |                       |
+| `M-e`     | `org-table-end-of-field`                  |                       |
 
 # modify
-| shortcut  | command                     | description                                                             |
-|-----------+-----------------------------+-------------------------------------------------------------------------|
-| M-left    | org-table-move-column-left  | move current column left                                                |
-| M-right   | org-table-move-column-right |                                                                         |
-| M-S-left  | org-table-delete-column     |                                                                         |
-| M-S-right | org-table-insert-column     |                                                                         |
-| M-up      | org-table-move-row-up       |                                                                         |
-| M-down    | org-table-move-row-down     |                                                                         |
-| M-S-up    | org-table-kill-row          |                                                                         |
-| M-S-down  | org-table-insert-row        |                                                                         |
-| C-c -     | org-table-insert-hline      | insert a hline below current row                                        |
-| C-c RET   | org-table-hline-and-move    | insert a hline below current row, and move point to the row under hline |
-| C-c ^     | org-table-sort-lines        |                                                                         |
+| shortcut    | command                       | description                                                             |
+|-------------+-------------------------------+-------------------------------------------------------------------------|
+| `M-left`    | `org-table-move-column-left`  | move current column left                                                |
+| `M-right`   | `org-table-move-column-right` |                                                                         |
+| `M-S-left`  | `org-table-delete-column`     |                                                                         |
+| `M-S-right` | `org-table-insert-column`     |                                                                         |
+| `M-up`      | `org-table-move-row-up`       |                                                                         |
+| `M-down`    | `org-table-move-row-down`     |                                                                         |
+| `M-S-up`    | `org-table-kill-row`          |                                                                         |
+| `M-S-down`  | `org-table-insert-row`        |                                                                         |
+| `C-c -`     | `org-table-insert-hline`      | insert a hline below current row                                        |
+| `C-c RET`   | `org-table-hline-and-move`    | insert a hline below current row, and move point to the row under hline |
+| `C-c ^`     | `org-table-sort-lines`        |                                                                         |
 
 # calculate
-| shortcut | command       | description                                                      |
-|----------+---------------+------------------------------------------------------------------|
-| C-c +    | org-table-sum | sum the current column, or active region. Echo, and able to yank |
+| shortcut | command         | description                                                      |
+|----------+-----------------+------------------------------------------------------------------|
+| `C-c +`  | `org-table-sum` | sum the current column, or active region. Echo, and able to yank |
 
 ## Formula
 * `C-c ?` in a field to know the cordinates of that field
