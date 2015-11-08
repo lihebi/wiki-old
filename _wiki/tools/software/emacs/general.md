@@ -15,6 +15,11 @@ general purpose "get out"
 * `C-u 8 *` # 插入8个*
 * `C-u 2 C-v`: scroll 2 lines
 
+# keyboard macro
+* `C-x (`: kmacro-start-macro
+* `C-x )`: kmacro-end-macro
+* `C-x e e e`: kmacro-end-and-call-macro
 
+Workflow: `C-x (` do whatever `C-x )` then `C-x e e e`
 
 
