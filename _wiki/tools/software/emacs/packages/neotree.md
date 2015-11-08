@@ -13,7 +13,7 @@ work with projectile: when run `projectile-switch-project`,
 neotree will change root.
 Why change root? I only need you markup the file in the tree!
 
-```el
+```lisp
 (setq projectile-switch-project-action 'neotree-projectile-action)
 ```
 
