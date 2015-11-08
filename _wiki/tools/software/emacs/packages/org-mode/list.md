@@ -1,6 +1,20 @@
 ---
-title: org mode
+title: list
 ---
+
+# todo
+* `C-c C-t`: rotate TODO state (unmarked -> TODO -> DONE)
+* `C-c C-c`: toggle a checkbox
+
+```
+* head1
+** head2
+
+* TODO todo item [%]
+  - [ ] hello
+  - [ ] world
+```
+
 
 # cycling
 * `TAB`: `org-cycle`: subtree cycling: folded->children->subtree
