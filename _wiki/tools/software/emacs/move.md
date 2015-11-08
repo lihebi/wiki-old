@@ -25,3 +25,11 @@ title: move
 * `M-r`: move-window-line-top-bottom
 * `M-<`: beginning-of-buffer
 * `M->`: end-of-buffer
+
+# semantic move
+* `C-M-n`: forward-list. Move forward a parenthetical group
+* `C-M-p`: backward-list
+* `C-M-f`: forward-sexp. Move forward a balanced expression
+* `C-M-b`: backward-sexp
+* `C-M-k`: kill-sexp. Kill balanced expression forward
+* `C-M-SPC`: mark-sexp. Put the mark at the end of the sexp
