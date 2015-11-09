@@ -26,3 +26,6 @@ Follow link: `C-c C-o`
 * `/italic/`
 * `_underline_`
 * `+strike+`
+
+# latex
+可以直接写latex, 包括公式。`C-c C-x \`直接转成特殊字符。
