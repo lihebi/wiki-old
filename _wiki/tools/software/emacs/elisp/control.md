@@ -66,3 +66,28 @@ var is index. from 0 to count-1.
 (dotimes (i 100)
   body
 ```
+
+## special form
+loop declaration & usage
+
+```lisp
+count-loop (var [from to [inc]]) body..
+```
+
+usage:
+
+```lisp
+(count-loop (i 0 10)
+            (prin1 i) (princ " ")
+            (prin1 (aref vector i))
+            (terpri))
+```
+
+Use with *done* form:
+
+```lisp
+(count-loop (done)
+  (if (pending)
+  (fixit)
+  (setq done)))
+```
