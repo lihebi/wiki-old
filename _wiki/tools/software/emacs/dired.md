@@ -7,6 +7,7 @@ title: Dired
 * `C-x 4 d`: `dired-other-window`
 * `C-x 5 d`: `dired-other-frame`
 
+move
 
 | shortcut            | command                      | description                                                                  |
 |---------------------+------------------------------+------------------------------------------------------------------------------|
@@ -16,12 +17,20 @@ title: Dired
 | j                   | dired-goto-file              |                                                                              |
 | M-s f C-s           | dired-isearch-filenames      |                                                                              |
 | C-s                 | M-s f C-s                    | need to change `dired-isearch-filenames` to true                             |
+
+flags
+
+| shortcut            | command                      | description                                                                  |
 |---------------------+------------------------------+------------------------------------------------------------------------------|
 | d                   |                              | flag for deletion                                                            |
 | u                   |                              | remove deletion flag                                                         |
 | DEL                 |                              | remove deletion flag, move above                                             |
 | x                   | do deletion                  |                                                                              |
 | % d regexp RET      |                              | Flag for deletion all files whose names match the regular expression regexp. |
+
+open file
+
+| shortcut            | command                      | description                                                                  |
 |---------------------+------------------------------+------------------------------------------------------------------------------|
 | f                   | dired-find-file              |                                                                              |
 | e                   | same                         |                                                                              |
@@ -36,7 +45,8 @@ title: Dired
 Can be negative
 * Otherwise, if some files are marked with `*`, the command operates on all those files.
 * Otherwise, the command operates on the current file only.
-
+| shortcut            | command                      | description                                                                  |
+|---------------------+------------------------------+------------------------------------------------------------------------------|
 | C new               | dired-do-copy                |                                                                              |
 | D                   | dired-do-delete              |                                                                              |
 | R new               | dired-do-rename              |                                                                              |
@@ -114,7 +124,8 @@ In to, we have `\&` as the whole match,
 | C-M-u    | dired-tree-up      | Go up to the parent directory’s header line              |
 | C-M-d    | dired-tree-down    | first subdirectory’s header line                         |
 | <        | dired-prev-dirline |                                                          |
-| >        | dired-prev-dirline                   |                                                          |
+| >        | dired-prev-dirline |                                                          |
+| g        | revert-buffer      | refresh                                                  |
 
 ## other
 * `=`: `dired-diff`: compares the current file (the file at point) with another file (read using the minibu↵er) using the diff program
