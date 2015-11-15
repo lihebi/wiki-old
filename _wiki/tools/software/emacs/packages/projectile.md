@@ -55,3 +55,24 @@ By melpa.
 | C-c p S        | projectile-save-project-buffers            |                                                   |
 | C-c p <escape> | projectile-project-buffers-other-buffer    | switch to most recent selected projectile buffer  |
 
+# integration
+## with helm
+* install helm-projectile
+* `C-c p h`: `helm-projectile`
+
+config
+
+```lisp
+;; (setq helm-projectile-fuzzy-match nil)
+(require 'helm-projectile)
+(helm-projectile-on)
+```
+
+## with perspective
+install `perspective`, `persp-projectile`
+
+```lisp
+(persp-mode)
+(require 'persp-projectile)
+(define-key projectile-mode-map (kbd "s-s") 'projectile-persp-switch-project)
+````
