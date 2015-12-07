@@ -34,19 +34,18 @@ It can be changed on per file basis:
 
 # structure editing
 
-| shortcut  | command                   | description                                              |
-|-----------+---------------------------+----------------------------------------------------------|
-| `M-RET`   | `org-insert-heading`      | create a new list on the same level                      |
-| `M-S-RET` | `org-insert-todo-heading` | insert new list on the same level together with checkbox |
-
-* `M-RET`: `org-meta-return`: create a new list on the same level
-* `M-S-RET`: `org-insert-todo-heading`: create a new list on the same level, together with checkbox
-* `M-S-up`: `org-shiftmetaup`
-* `M-S-down`: `org-shiftmetadown`
-* `M-left`: `org-metaleft`: decrease. leave children alone
-* `M-right`: `org-metaright`: increase
-* `M-S-left`: `org-shiftmetaleft`: decrease together with children
-* `M-S-right`: `org-shiftmetaright`
+| shortcut    | command                   | description                                                 |
+|-------------+---------------------------+-------------------------------------------------------------|
+| `M-RET`     | `org-insert-heading`      | create a new list on the same level                         |
+| `M-S-RET`   | `org-insert-todo-heading` | insert new list on the same level together with checkbox    |
+| `M-RET`     | `org-meta-return`         | create a new list on the same level                         |
+| `M-S-RET`   | `org-insert-todo-heading` | create a new list on the same level, together with checkbox |
+| `M-S-up`    | `org-shiftmetaup`         |                                                             |
+| `M-S-down`  | `rg-shiftmetadown`        |                                                             |
+| `M-left`    | `org-metaleft`            | decrease. leave children alone                              |
+| `M-right`   | `org-metaright`           | increase                                                    |
+| `M-S-left`  | `org-shiftmetaleft`       | decrease together with children                             |
+| `M-S-right` | `org-shiftmetaright`      |                                                             |
 
 # motion
 
