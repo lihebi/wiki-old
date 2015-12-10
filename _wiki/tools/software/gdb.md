@@ -111,3 +111,18 @@ ps -e | grep taskgated
 sudo kill -9 56822
 codesign -s gdb-cert $(which gdb)
 ```
+
+# pretty printers
+The setup of pretty printer on Mac costs me more than 2 hours!
+
+The working solution is here: https://github.com/lihebi/libcxx-pretty-printers
+Copy the gdbinit into ~/.gdbinit, change the path according to the comments, and you are good to go.
+
+After this, `info pretty-print` gives me a long list of supported libstd++ types, Nice!
+And to my surprise, `show print pretty` is off, and I guess, it is nothing about pretty-printer.
+Actually it should be one kind of pretty-printer, in terms that it indeed prettify the format, but still too much information.
+
+I was trying something like, in gdb, use `show auto-load script-directory`.
+But when installing gdb by homebrew, it gives me `${prefix}/share/auto-load` as directory.
+I copy the `libstdc++xx-gdb.py` into that folder, no luck.
+The `show print pretty` is on.
