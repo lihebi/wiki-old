@@ -126,3 +126,18 @@ I was trying something like, in gdb, use `show auto-load script-directory`.
 But when installing gdb by homebrew, it gives me `${prefix}/share/auto-load` as directory.
 I copy the `libstdc++xx-gdb.py` into that folder, no luck.
 The `show print pretty` is on.
+
+# conditional break
+
+```
+b Ctags.cpp:28 if strcmp(name.c_str(), "refcount")==0
+```
+
+If some type cannot be easily compared, use:
+
+```cpp
+if (myStr == "xyz")
+{
+// Set breakpoint here
+}
+```
