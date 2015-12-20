@@ -5,7 +5,7 @@ $(document).ready(function() {
   renderUML();
   adjustEdit();
   $('#toc').toc({
-    'selectors': 'h2,h3',
+    'selectors': 'h1,h2,h3',
     'container': '.post-content'
   });
 })
