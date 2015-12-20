@@ -44,6 +44,10 @@ q # quit
 Commands
 -------
 
+### load & reload
+* `file binary-executable`: reload both binary and its symbol table
+* `exec-file`: load binary
+
 ### Breakpoint
 
 * `b F`: Set a break-point at function F.
@@ -71,10 +75,9 @@ Commands
 * `info reg`: contents of registers.
 * `p V`: print variable V
 * `x /CT A`: Examining memory where:
-
-`C`: number of units to display.
-
-`T`:
+  - `C`: number of units to display.
+  - `A`: an absolute address or $reg pointed by some register.
+  - `T`:
 
 ```
 x hex integer.
@@ -86,7 +89,6 @@ s null terminated string.
 i as machine instruction.
 ```
 
-`A`: an absolute address or $reg pointed by some register.
 
 
 Set up on Mac
