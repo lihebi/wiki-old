@@ -2,17 +2,22 @@
 title: library
 ---
 
-# Library
-
 Static Library .a
-==============
+=================
 
-### 生成
+生成
+---
 
 ```
 cc -Wall -c a1.c a2.c
 ar -cvq liba.a a1.o a2.o
 ```
+
+note: the options for `ar` is not really needed. Here're the document for them:
+
+* `-q`: append the files into the archive, if exists. Much faster than `-r` because do not do checking.
+* `-c`: create archive silently
+* `-v`: verbose
 
 ### list files in Static Library
 
@@ -20,15 +25,16 @@ ar -cvq liba.a a1.o a2.o
 ar -t liba.a
 ```
 
-### 使用
+使用
+---
 
 ```
 cc -o out prog.c liba.a
 cc -o out prog.c -L/path/to/library -la
 ```
 
-### 例子
-
+例子
+---
 a1.c
 
 ```
@@ -94,6 +100,14 @@ Symbol Link的作用
 
 * `/opt/lib/liba.so`: allow `-la` to work.
 * `/opt/lib/liba.so.1`: allow run time binding to work.
+
+Names:
+
+* soname(also fully-qualified name): `liba.so.1`. When create the library, must use the correct name.
+* real name: `liba.so.1.0`
+* linker name: how the compiler to find the library: `liba.so`
+
+The link relation should be: `liba.so` => `liba.so.1` => `liba.so.1.0`
 
 ### 使用
 
