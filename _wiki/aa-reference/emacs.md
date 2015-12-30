@@ -47,6 +47,13 @@ navigating
 | forward-sexp      |                                                                              |
 | backward-sexp     |                                                                              |
 
+
+register
+
+| command          | desc                          |
+|------------------+-------------------------------|
+| jump-to-register | the register can store a file |
+
 killing
 
 | command        | desc |
