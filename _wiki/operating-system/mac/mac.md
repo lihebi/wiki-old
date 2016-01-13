@@ -92,3 +92,24 @@ EOF
 
 * 域名服务器设置为`3.1`
 * 或，高级，去掉勾选“连接或断开后，清空DNS缓存”
+
+# ringtone for iphone
+* Find the song you want and note the start/stop time you want the ring tone.
+* Right click - get info, click the Options tab and set the start/stop times as above.
+* Right click - Create AAC version. This creates a new file.
+* Drag this new file from the iTunes window to the desktop.
+* Delete the file from iTunes and also select Delete from hard drive.
+* On the desktop, rename the file whateveryouwant.m4r (first part you can change to whatever you want & change the extension to .m4r).
+* Drag the file back to the iTunes library at top left.
+Make sure iTunes prefs > General has Tones ticked.
+
+## use ffmpeg
+```sh
+# ffmpeg will recognize format by suffix
+ffmpeg -i input.anything output.m4a
+# m4a and m4r are of the same type, but just one for audio and one for ringtone.
+mv output.m4a output.m4r
+# -ss start position -t duration
+# iphone allows up to 40 seconds
+ffmpeg -ss 5 -t 40 -i xxx.mp3 output.m4a
+```

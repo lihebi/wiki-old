@@ -109,3 +109,25 @@ monofont是默认的等宽字，不指定的话只要用到等宽字就会看到
 Comments can be added to the margins of the document using the `\todo{Here's a comment in the margin!}` todo command, as shown in the example on the right. You can also add inline comments:
 
 `\todo[inline, color=green!40]{This is an inline comment.}`
+
+
+# How to install a sty and cls file globally?
+On Mac OS X, Put it in:
+
+```
+/Users/hebi/Library/texmf/tex/latex/local/fse/acmcopyright.sty
+/Users/hebi/Library/texmf/tex/latex/local/fse/sig-alternate-05-2015.cls
+```
+
+Then you can just use `\documentclass{sig-alternate-05-2015}`.
+
+I actually didn't do any update of database, and it works.
+To see it works, use `kpsewhich sig-alternate-05-2015.cls`, and it output the path of the cls file.
+If you really need to update database, `texhash` will do the trick.
+Also note `mktexlsr` may also do this.
+
+On linux, it should be `~/texmf/tex/latex/local/`
+
+The global way should be: `/usr/local/texlive/texmf-local/tex/latex/local/`
+
+See also: http://tex.stackexchange.com/questions/1137/where-do-i-place-my-own-sty-or-cls-files-to-make-them-available-to-all-my-te
